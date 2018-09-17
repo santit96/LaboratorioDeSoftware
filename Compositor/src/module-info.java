@@ -5,5 +5,5 @@
  * @author santi
  *
  */
-module Compositor {
+module compositor {
 }
