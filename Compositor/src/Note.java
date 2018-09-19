@@ -14,11 +14,19 @@ class Note extends JLabel{
     private String note;
 	private char value;
 	private boolean selected;
+	private String imageURL;
 
-    Note(String note, char value){
+    Note(String note,char value){
         super("");
         this.setValue(value);
         this.setNote(note);
+        this.setSelected(false);
+    }
+	
+	Note(char value){
+        super("");
+        this.setValue(value);
+        this.setNote("");
         this.setSelected(false);
     }
     
@@ -43,6 +51,19 @@ class Note extends JLabel{
 		this.selected = selected;
 	}
 	
+	public String getImageURL() {
+		return imageURL;
+	}
+
+	private void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+	}
+	
+	public void setImage(String url) {
+		this.setIcon(new ImageIcon(CompositorView.class.getResource(url)));
+		this.setImageURL(url);
+	}
+	
 	public void toggleSelected() {
 
 		if (this.isSelected())
@@ -52,4 +73,6 @@ class Note extends JLabel{
 		
 		this.setSelected(!this.isSelected());
 	}
+
+
 }

@@ -58,7 +58,7 @@ public class CompositorView {
 	private JTextField input_2;
    	private Player player;
 	private Note selectedNote;
-
+	private ArrayList<Note> usingNotes;
 
 	/**
 	 * Launch the application.
@@ -93,87 +93,98 @@ public class CompositorView {
 		frame.getContentPane().setLayout(null);
 		
 		player = new Player();
-		List<Note> using_notes= new ArrayList<>();
-		
-		JLayeredPane pentagrama = new JLayeredPane();
-		pentagrama.setBackground(Color.BLUE);
-		pentagrama.setBounds(0, 0, 450, 101);
-		frame.getContentPane().add(pentagrama);
+		usingNotes= new ArrayList<>();
 		
 		JLabel claveDeSol = new JLabel("");
-		claveDeSol.setBounds(0, 5, 66, 89);
-		pentagrama.add(claveDeSol);
+		claveDeSol.setBounds(0, 0, 66, 89);
+		frame.getContentPane().add(claveDeSol);
 		claveDeSol.setHorizontalAlignment(SwingConstants.CENTER);
-		claveDeSol.setIcon(new ImageIcon("/home/santi/Documentos/Facultad/Laboratorio-de-software/Imágenes para el compositor/clavesol.png"));
+		claveDeSol.setIcon(new ImageIcon(CompositorView.class.getResource("/images/clavesol.png")));
+		
+		JLayeredPane pentagrama = new JLayeredPane();
+		pentagrama.setBounds(0, 0, 450, 101);
+		frame.getContentPane().add(pentagrama);
 		
 		StavesLine penta_1 = new StavesLine("G");
 		penta_1.setBounds(0, 5, 450, 12);
 		pentagrama.add(penta_1);
 		penta_1.setBorder(null);
 		penta_1.setBackground(Color.WHITE);
+		penta_1.setLayout(null);
 		
 		StavesLine penta_2 = new StavesLine("F");
 		penta_2.setBounds(0, 17, 450, 3);
 		pentagrama.add(penta_2);
 		penta_2.setBackground(Color.BLACK);
+		penta_2.setLayout(null);
 		
 		StavesLine penta_3 = new StavesLine("E");
 		penta_3.setBounds(0, 20, 450, 12);
 		pentagrama.add(penta_3);
 		penta_3.setBorder(null);
 		penta_3.setBackground(Color.WHITE);
+		penta_3.setLayout(null);
 		
 		StavesLine penta_4 = new StavesLine("D");
 		penta_4.setBounds(0, 32, 450, 3);
 		pentagrama.add(penta_4);
 		penta_4.setBackground(Color.BLACK);
+		penta_4.setLayout(null);
 		
 		StavesLine penta_5 = new StavesLine("C");
 		penta_5.setBounds(0, 35, 450, 12);
 		pentagrama.add(penta_5);
 		penta_5.setBorder(null);
 		penta_5.setBackground(Color.WHITE);
+		penta_5.setLayout(null);
 		
 		StavesLine penta_6 = new StavesLine("B6");
 		penta_6.setBounds(0, 47, 450, 3);
 		pentagrama.add(penta_6);
 		penta_6.setBackground(Color.BLACK);
+		penta_6.setLayout(null);
 		
 		StavesLine penta_7 = new StavesLine("A6");
 		penta_7.setBounds(0, 50, 450, 12);
 		pentagrama.add(penta_7);
 		penta_7.setBorder(null);
 		penta_7.setBackground(Color.WHITE);
+		penta_7.setLayout(null);
 		
 		StavesLine penta_8 = new StavesLine("G6");
 		penta_8.setBounds(0, 62, 450, 3);
 		pentagrama.add(penta_8);
 		penta_8.setBackground(Color.BLACK);
+		penta_8.setLayout(null);
 		
 		StavesLine penta_9 = new StavesLine("F6");
 		penta_9.setBounds(0, 65, 450, 12);
 		pentagrama.add(penta_9);
 		penta_9.setBorder(null);
 		penta_9.setBackground(Color.WHITE);
+		penta_9.setLayout(null);
 		
 		StavesLine penta_10 = new StavesLine("E6");
 		penta_10.setBounds(0, 77, 450, 3);
 		pentagrama.add(penta_10);
 		penta_10.setBackground(Color.BLACK);
+		penta_10.setLayout(null);
 		
 		StavesLine penta_11 = new StavesLine("D6");
 		penta_11.setBounds(0, 80, 450, 12);
 		pentagrama.add(penta_11);
 		penta_11.setBorder(null);
 		penta_11.setBackground(Color.WHITE);
+		penta_11.setLayout(null);
 		
 		StavesLine penta_12 = new StavesLine("C6");
 		penta_12.setBounds(0, 92, 450, 3);
 		pentagrama.add(penta_12);
 		penta_12.setBackground(Color.WHITE);
+		penta_12.setLayout(null);
 		
 		JLabel undo = new JLabel("");
-		undo.setIcon(new ImageIcon("/home/santi/Documentos/Facultad/Laboratorio-de-software/Imágenes para el compositor/undo.png"));
+		undo.setIcon(new ImageIcon(CompositorView.class.getResource("/images/undo.png")));
 		undo.setBounds(365, 178, 30, 30);
 		frame.getContentPane().add(undo);
 		
@@ -193,46 +204,46 @@ public class CompositorView {
 		notes.setBounds(49, 108, 349, 58);
 		frame.getContentPane().add(notes);
 
-		Note redonda = new Note("",'w');
+		Note redonda = new Note('w');
 		notes.add(redonda);
-		redonda.setIcon(new ImageIcon("/home/santi/Documentos/Facultad/Laboratorio-de-software/Imágenes para el compositor/redonda.png"));
+		redonda.setImage("/images/redonda.png");
 		
-		JLabel blanca = new Note("",'h');
+		Note blanca = new Note('h');
 		notes.add(blanca);
-		blanca.setIcon(new ImageIcon("/home/santi/Documentos/Facultad/Laboratorio-de-software/Imágenes para el compositor/blanca.png"));
+		blanca.setImage("/images/blanca.png");
 		
-		JLabel negra = new Note("",'q');
+		Note negra = new Note('q');
 		notes.add(negra);
-		negra.setIcon(new ImageIcon("/home/santi/Documentos/Facultad/Laboratorio-de-software/Imágenes para el compositor/negra.png"));
+		negra.setImage("/images/negra.png");
 		
-		JLabel corchea = new Note("",'i');
+		Note corchea = new Note('i');
 		notes.add(corchea);
-		corchea.setIcon(new ImageIcon("/home/santi/Documentos/Facultad/Laboratorio-de-software/Imágenes para el compositor/corchea.png"));
+		corchea.setImage("/images/corchea.png");
 		
-		JLabel semicorchea = new Note("",'s');
+		Note semicorchea = new Note('s');
 		notes.add(semicorchea);
-		semicorchea.setIcon(new ImageIcon("/home/santi/Documentos/Facultad/Laboratorio-de-software/Imágenes para el compositor/semicorchea.png"));
+		semicorchea.setImage("/images/semicorchea.png");
 		
-		JLabel fusa = new Note("",'t');
+		Note fusa = new Note('t');
 		notes.add(fusa);
-		fusa.setIcon(new ImageIcon("/home/santi/Documentos/Facultad/Laboratorio-de-software/Imágenes para el compositor/fusa.png"));
+		fusa.setImage("/images/fusa.png");
 		
-		JLabel semifusa = new Note("",'x');
+		Note semifusa = new Note('x');
 		notes.add(semifusa);
-		semifusa.setIcon(new ImageIcon("/home/santi/Documentos/Facultad/Laboratorio-de-software/Imágenes para el compositor/semifusa.png"));
+		semifusa.setImage("/images/semifusa.png");
 		
 		JLabel play_1 = new JLabel("");
-		play_1.setIcon(new ImageIcon("/home/santi/Documentos/Facultad/Laboratorio-de-software/Imágenes para el compositor/play.png"));
-		play_1.setBounds(275, 169, 32, 32);
+		play_1.setIcon(new ImageIcon(CompositorView.class.getResource("/images/play.png")));
+		play_1.setBounds(275, 169, 43, 39);
 		frame.getContentPane().add(play_1);
 		
 		JLabel play_2 = new JLabel("");
-		play_2.setIcon(new ImageIcon("/home/santi/Documentos/Facultad/Laboratorio-de-software/Imágenes para el compositor/play.png"));
+		play_2.setIcon(new ImageIcon(CompositorView.class.getResource("/images/play.png")));
 		play_2.setBounds(316, 225, 32, 32);
 		frame.getContentPane().add(play_2);
 		
 		JLabel clean = new JLabel("");
-		clean.setIcon(new ImageIcon("/home/santi/Documentos/Facultad/Laboratorio-de-software/Imágenes para el compositor/escoba.png"));
+		clean.setIcon(new ImageIcon(CompositorView.class.getResource("/images/escoba.png")));
 		clean.setBounds(319, 169, 32, 32);
 		frame.getContentPane().add(clean);
 		
@@ -255,6 +266,31 @@ public class CompositorView {
 		    );
 		}
 		
+		for (Component stavesLine : pentagrama.getComponents()) {
+		     stavesLine.addMouseListener(new MouseAdapter() {
+				
+			    public void mouseClicked(MouseEvent e) {
+			    	if (selectedNote!= null) {
+				    	Note noteCopy= new Note(((StavesLine) stavesLine).getNote(),selectedNote.getValue());
+				    	noteCopy.setImage(selectedNote.getImageURL());
+				    	pentagrama.setLayer(noteCopy, 1);
+				    	int x;
+				    	if (usingNotes.isEmpty())
+				    		x=50;
+				    	else
+				    		x=usingNotes.get(0).getX()+30;
+				        noteCopy.setBounds(x,(stavesLine.getY()-20), selectedNote.getWidth(), selectedNote.getHeight());
+				    	pentagrama.add(noteCopy);
+				    	usingNotes.add(0,noteCopy);
+				    	input_1.setText(input_1.getText()+" "+ noteCopy.getNote()+noteCopy.getValue());
+				    	
+				    }
+				    			            
+			    }
+		    }
+		    );
+		}
+		
         play_2.addMouseListener(new MouseAdapter() {
 		
 		    public void mouseClicked(MouseEvent e) {
@@ -270,6 +306,37 @@ public class CompositorView {
 			    player.play(input_1.getText());	
 		    
 		    }
+	    }
+	    );
+        
+        undo.addMouseListener(new MouseAdapter() {
+    		
+		    public void mouseClicked(MouseEvent e) {
+			    if (!usingNotes.isEmpty()) {
+		    	  Note last=usingNotes.get(0);
+		    	  int indexNote=input_1.getText().lastIndexOf(last.getNote()+last.getValue());
+		    	  input_1.setText(input_1.getText().substring(0,indexNote));
+		    	  pentagrama.remove(last);
+		    	  pentagrama.repaint();
+			      usingNotes.remove(0);
+			      
+			    }
+		    }
+	    }
+	    );
+        
+        clean.addMouseListener(new MouseAdapter() {
+    		
+		    public void mouseClicked(MouseEvent e) {
+		    	  input_1.setText("");
+		    	  for (Component note : usingNotes) {
+		    		  pentagrama.remove(note);
+		    	  }
+		    	  pentagrama.repaint();
+			      usingNotes.clear();
+
+			}
+		    
 	    }
 	    );
    
