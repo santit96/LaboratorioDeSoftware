@@ -105,79 +105,79 @@ public class CompositorView {
 		pentagrama.setBounds(0, 0, 450, 101);
 		frame.getContentPane().add(pentagrama);
 		
-		StavesLine penta_1 = new StavesLine("G");
+		StavesLine penta_1 = new StavesLine("G6");
 		penta_1.setBounds(0, 5, 450, 12);
 		pentagrama.add(penta_1);
 		penta_1.setBorder(null);
 		penta_1.setBackground(Color.WHITE);
 		penta_1.setLayout(null);
 		
-		StavesLine penta_2 = new StavesLine("F");
+		StavesLine penta_2 = new StavesLine("F6");
 		penta_2.setBounds(0, 17, 450, 3);
 		pentagrama.add(penta_2);
 		penta_2.setBackground(Color.BLACK);
 		penta_2.setLayout(null);
 		
-		StavesLine penta_3 = new StavesLine("E");
+		StavesLine penta_3 = new StavesLine("E6");
 		penta_3.setBounds(0, 20, 450, 12);
 		pentagrama.add(penta_3);
 		penta_3.setBorder(null);
 		penta_3.setBackground(Color.WHITE);
 		penta_3.setLayout(null);
 		
-		StavesLine penta_4 = new StavesLine("D");
+		StavesLine penta_4 = new StavesLine("D6");
 		penta_4.setBounds(0, 32, 450, 3);
 		pentagrama.add(penta_4);
 		penta_4.setBackground(Color.BLACK);
 		penta_4.setLayout(null);
 		
-		StavesLine penta_5 = new StavesLine("C");
+		StavesLine penta_5 = new StavesLine("C6");
 		penta_5.setBounds(0, 35, 450, 12);
 		pentagrama.add(penta_5);
 		penta_5.setBorder(null);
 		penta_5.setBackground(Color.WHITE);
 		penta_5.setLayout(null);
 		
-		StavesLine penta_6 = new StavesLine("B6");
+		StavesLine penta_6 = new StavesLine("B");
 		penta_6.setBounds(0, 47, 450, 3);
 		pentagrama.add(penta_6);
 		penta_6.setBackground(Color.BLACK);
 		penta_6.setLayout(null);
 		
-		StavesLine penta_7 = new StavesLine("A6");
+		StavesLine penta_7 = new StavesLine("A");
 		penta_7.setBounds(0, 50, 450, 12);
 		pentagrama.add(penta_7);
 		penta_7.setBorder(null);
 		penta_7.setBackground(Color.WHITE);
 		penta_7.setLayout(null);
 		
-		StavesLine penta_8 = new StavesLine("G6");
+		StavesLine penta_8 = new StavesLine("G");
 		penta_8.setBounds(0, 62, 450, 3);
 		pentagrama.add(penta_8);
 		penta_8.setBackground(Color.BLACK);
 		penta_8.setLayout(null);
 		
-		StavesLine penta_9 = new StavesLine("F6");
+		StavesLine penta_9 = new StavesLine("F");
 		penta_9.setBounds(0, 65, 450, 12);
 		pentagrama.add(penta_9);
 		penta_9.setBorder(null);
 		penta_9.setBackground(Color.WHITE);
 		penta_9.setLayout(null);
 		
-		StavesLine penta_10 = new StavesLine("E6");
+		StavesLine penta_10 = new StavesLine("E");
 		penta_10.setBounds(0, 77, 450, 3);
 		pentagrama.add(penta_10);
 		penta_10.setBackground(Color.BLACK);
 		penta_10.setLayout(null);
 		
-		StavesLine penta_11 = new StavesLine("D6");
+		StavesLine penta_11 = new StavesLine("D");
 		penta_11.setBounds(0, 80, 450, 12);
 		pentagrama.add(penta_11);
 		penta_11.setBorder(null);
 		penta_11.setBackground(Color.WHITE);
 		penta_11.setLayout(null);
 		
-		StavesLine penta_12 = new StavesLine("C6");
+		StavesLine penta_12 = new StavesLine("C");
 		penta_12.setBounds(0, 92, 450, 3);
 		pentagrama.add(penta_12);
 		penta_12.setBackground(Color.WHITE);
@@ -279,7 +279,7 @@ public class CompositorView {
 				    		x=50;
 				    	else
 				    		x=usingNotes.get(0).getX()+30;
-				        noteCopy.setBounds(x,(stavesLine.getY()-20), selectedNote.getWidth(), selectedNote.getHeight());
+				        noteCopy.setBounds(x,(stavesLine.getY()-25), selectedNote.getWidth(), selectedNote.getHeight());
 				    	pentagrama.add(noteCopy);
 				    	usingNotes.add(0,noteCopy);
 				    	input_1.setText(input_1.getText()+" "+ noteCopy.getNote()+noteCopy.getValue());
