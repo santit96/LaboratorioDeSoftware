@@ -11,4 +11,13 @@ public enum RangoValoracion {
 		this.rango=rango;
 	}
 	
+	public String toString() {
+		return rango.getLimiteInferior()+"-"+rango.getLimiteSuperor();
+	}
+	
+	public Rango getRango() {
+		return new Rango(rango.getLimiteInferior(),rango.getLimiteSuperor());
+	}
+	
+	
 }

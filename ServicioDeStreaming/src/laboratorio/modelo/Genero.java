@@ -2,8 +2,7 @@ package laboratorio.modelo;
 
 public enum Genero {
 	ACCION("Acción"),
-	CIENCIA("Ciencia"),
-	FICCION("Ficción"),
+	CIENCIA_FICCION("Ciencia"),
 	COMEDIA("Comedia"),
 	DRAMA("Drama"),
 	FANTASIA("Fantasía"),

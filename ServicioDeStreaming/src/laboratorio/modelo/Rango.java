@@ -1,26 +1,30 @@
 package laboratorio.modelo;
 
 public class Rango {
-	private int limiteInferior;
-	private int limiteSuperor;
+	private Integer limiteInferior;
+	private Integer limiteSuperor;
 	
 	
-	public Rango(int limiteInferior, int limiteSuperor) {
+	public Rango(Integer limiteInferior, Integer limiteSuperor) {
 		super();
 		this.limiteInferior = limiteInferior;
 		this.limiteSuperor = limiteSuperor;
 	}
-	public int getLimiteInferior() {
+	public Integer getLimiteInferior() {
 		return limiteInferior;
 	}
 	public void setLimiteInferior(int limiteInferior) {
 		this.limiteInferior = limiteInferior;
 	}
-	public int getLimiteSuperor() {
+	public Integer getLimiteSuperor() {
 		return limiteSuperor;
 	}
 	public void setLimiteSuperor(int limiteSuperor) {
 		this.limiteSuperor = limiteSuperor;
+	}
+	
+	public String toString() {
+		return this.getLimiteInferior()+"-"+this.getLimiteSuperor();
 	}
 	
 	

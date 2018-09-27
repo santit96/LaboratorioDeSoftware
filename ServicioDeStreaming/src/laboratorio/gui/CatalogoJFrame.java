@@ -1,5 +1,9 @@
 package laboratorio.gui;
 import java.awt.EventQueue;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -11,11 +15,23 @@ import javax.swing.JTable;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.AbstractTableModel;
 
+import laboratorio.modelo.Buscador;
+import laboratorio.modelo.ClasificacionEdad;
+import laboratorio.modelo.Pelicula;
+import laboratorio.modelo.Rango;
+import laboratorio.modelo.RangoReproduccion;
+import laboratorio.modelo.RangoValoracion;
+import laboratorio.modelo.Genero;
+
 public class CatalogoJFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JTable table;
 	private int sortCol = -1;
+	private Buscador buscador;
+	private ArrayList<Pelicula> catalogo;
+	private ArrayList<Pelicula> catalogoFiltrado;
+
 	
 	/**
 	 * Launch the application.
@@ -39,7 +55,36 @@ public class CatalogoJFrame extends JFrame {
 
 	
 	public CatalogoJFrame() {
+		this.buscador=new Buscador();
+		this.catalogo=new ArrayList<Pelicula>();
+		this.catalogoFiltrado=new ArrayList<Pelicula>();
+		ArrayList<Genero> generos=new ArrayList<Genero>();
+		generos.add(Genero.CIENCIA_FICCION);
+		generos.add(Genero.COMEDIA);
+		
+		catalogo.add(new Pelicula("Volver al futuro",1985,"Estados Unidos",ClasificacionEdad.ATP,generos,34,(float) 8.9));
+		catalogo.add(new Pelicula("Godzilla",1965,"Estados Unidos",ClasificacionEdad.Mayores13,generos,376,(float)7.1));
+		catalogo.add(new Pelicula("El Angel",2018,"Argentina",ClasificacionEdad.ATP,generos,34,(float) 7.9));
+		generos.clear();
+		generos.add(Genero.DRAMA);
+		generos.add(Genero.FANTASIA);
+		generos.add(Genero.SUSPENSO);
+		catalogo.add(new Pelicula("Siete Samurais",1977,"Japon",ClasificacionEdad.Mayores18,generos,111,(float) 6.3));
+		catalogo.add(new Pelicula("The Room",2002,"Estados Unidos",ClasificacionEdad.Mayores16,generos,12,(float) 3.9));
+		catalogo.add(new Pelicula("Salir al futuro",1985,"Estados Unidos",ClasificacionEdad.ATP,generos,34,(float) 8.9));
+		catalogo.add(new Pelicula("Godzilla3",1965,"Estados Unidos",ClasificacionEdad.Mayores13,generos,376,(float)7.1));
+		catalogo.add(new Pelicula("El Demonio",2013,"Argentina",ClasificacionEdad.ATP,generos,34,(float) 7.9));
+		generos.clear();
+		generos.add(Genero.DRAMA);
+		generos.add(Genero.MUSICAL);
+		generos.add(Genero.ROMANCE);
+		catalogo.add(new Pelicula("Siete maestros",1977,"Japon",ClasificacionEdad.Mayores18,generos,111,(float) 6.3));
+		catalogo.add(new Pelicula("The Disaster Artist",2002,"Finalandia",ClasificacionEdad.Mayores16,generos,10001,(float) 3.9));
 		setTitle("Buscador de Peliculas");
+		buscador.setPeliculas(catalogo);
+		catalogoFiltrado.addAll(catalogo);
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1196, 744);
 		setResizable(false);
@@ -56,7 +101,7 @@ public class CatalogoJFrame extends JFrame {
 		panel.add(lblGenero);
 		
 		JComboBox comboBoxGenero = new JComboBox();
-		comboBoxGenero.setModel(new DefaultComboBoxModel(new String[] {"Acción", "Ciencia Ficción", "Comedia", "Drama", "Fantasía", "Musical", "Romance", "Suspenso"}));
+		comboBoxGenero.setModel(new DefaultComboBoxModel(new Genero[] {Genero.ACCION,Genero.CIENCIA_FICCION,Genero.COMEDIA,Genero.DRAMA,Genero.FANTASIA,Genero.MUSICAL,Genero.ROMANCE,Genero.SUSPENSO}));
 		comboBoxGenero.setBounds(92, 55, 151, 24);
 		panel.add(comboBoxGenero);
 		
@@ -66,7 +111,7 @@ public class CatalogoJFrame extends JFrame {
 		
 		JComboBox comboBoxCalidad = new JComboBox();
 		comboBoxCalidad.setBounds(421, 55, 97, 24);
-		comboBoxCalidad.setModel(new DefaultComboBoxModel(new String[] {"ATP", "+13", "+16", "+18"}));
+		comboBoxCalidad.setModel(new DefaultComboBoxModel(new ClasificacionEdad[] {ClasificacionEdad.ATP,ClasificacionEdad.Mayores13,ClasificacionEdad.Mayores16,ClasificacionEdad.Mayores18}));
 		panel.add(comboBoxCalidad);
 		
 		JLabel lblPunt = new JLabel("Valoracion:");
@@ -75,7 +120,7 @@ public class CatalogoJFrame extends JFrame {
 		
 		JComboBox comboBoxPunt = new JComboBox();
 		comboBoxPunt.setBounds(666, 55, 97, 24);
-		comboBoxPunt.setModel(new DefaultComboBoxModel(new String[] {"0.0 - 2.0", "2.0 - 4.0", "4.0 - 7.0", "7.0 - 10.0"}));
+		comboBoxPunt.setModel(new DefaultComboBoxModel(new RangoValoracion[] { RangoValoracion.DE0A2, RangoValoracion.DE2A4, RangoValoracion.DE4A7, RangoValoracion.DE7A10}));
 		panel.add(comboBoxPunt);
 		
 		JLabel lblRep = new JLabel("Reproducciones:");
@@ -84,12 +129,21 @@ public class CatalogoJFrame extends JFrame {
 		
 		JComboBox comboBoxRep = new JComboBox();
 		comboBoxRep.setBounds(976, 55, 97, 24);
-		comboBoxRep.setModel(new DefaultComboBoxModel(new String[] {"10 <", "10 - 99", "100 - 499", "500 - 1000", "> 1000"}));
+		comboBoxRep.setModel(new DefaultComboBoxModel(new RangoReproduccion[] {RangoReproduccion.MENORA10,RangoReproduccion.DE10A99,RangoReproduccion.DE100A499,RangoReproduccion.DE500A999,RangoReproduccion.MASDE1000}));
 		panel.add(comboBoxRep);
 		
 		JButton btnNewButton = new JButton("Filtrar");
 		btnNewButton.setBounds(32, 106, 1117, 46);
 		panel.add(btnNewButton);
+		
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			
+		    public void mouseClicked(MouseEvent e) {
+		    	catalogoFiltrado=(ArrayList<Pelicula>) buscador.seleccionar(((Genero) comboBoxGenero.getModel().getElementAt((comboBoxGenero.getSelectedIndex()))),(ClasificacionEdad) comboBoxCalidad.getModel().getElementAt(comboBoxCalidad.getSelectedIndex()),  ((RangoValoracion) comboBoxPunt.getModel().getElementAt((comboBoxPunt.getSelectedIndex()))).getRango(),((RangoReproduccion) comboBoxRep.getModel().getElementAt((comboBoxRep.getSelectedIndex()))).getRango() ,Buscador.defaultComparator);
+		        table.repaint();
+		    }
+	    }
+	    );
 		
 		JPanel panelGrilla = new JPanel();
 		panelGrilla.setBounds(12, 206, 1172, 489);
@@ -116,12 +170,29 @@ public class CatalogoJFrame extends JFrame {
 		    }
 	
 		    // COMPLETAR para devolver la cantidad de filas
-		    public int getRowCount() { return 10; }
+		    public int getRowCount() { return catalogoFiltrado.size(); }
 		    public int getColumnCount() { return columnNames.length; }
 		    
 		    // COMPLETAR este metodo para llenar la tabla
 		    public Object getValueAt(int row, int col) {
-		    	 return "COMPLETAR";
+		    	switch (col){
+		    	case 0: col=0;
+		    	  return catalogoFiltrado.get(row).getTitle();
+		    	case 1: col=1;
+		    	  return catalogoFiltrado.get(row).getCountry();
+		    	case 2: col=2;
+		    	  return catalogoFiltrado.get(row).getYear();
+		    	case 3: col=3;
+		    	  return catalogoFiltrado.get(row).getGeneros();
+		    	case 4: col=4;
+		    	  return catalogoFiltrado.get(row).getAge_clasification();
+		    	case 5: col=5;
+		    	  return catalogoFiltrado.get(row).getAppreciation();
+		    	case 6: col=6;
+		    	  return catalogoFiltrado.get(row).getReproductions();
+		    	}
+				return null;  
+		    	
 		    }
 		    public boolean isCellEditable(int row, int col)
 		        { return false; }

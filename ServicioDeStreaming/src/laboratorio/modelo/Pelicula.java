@@ -20,7 +20,8 @@ public class Pelicula {
 	  this.year = year;
 	  this.country = country;
 	  this.age_clasification = age_clasification;
-	  this.generos = generos;
+	  this.generos=new ArrayList<Genero>();
+	  this.generos.addAll(generos);
 	  this.reproductions = reproductions;
 	  this.appreciation = appreciation;
    }
