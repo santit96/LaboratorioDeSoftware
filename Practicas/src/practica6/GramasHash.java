@@ -45,8 +45,9 @@ public class GramasHash {
 		   System.out.println(key+":");
 		   for (String i :value) {
 			   System.out.print(i+" - ");
-			   System.out.println("-----");
 		   }
+		   System.out.println("");
+		   System.out.println("-----");
 		   
 	   }
    }
