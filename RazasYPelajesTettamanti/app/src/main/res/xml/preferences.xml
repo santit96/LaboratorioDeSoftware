@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Modo Reconocimiento">
+
+        <ListPreference
+            android:defaultValue="1"
+            android:enabled="true"
+            android:entries="@array/formatoReconocimiento"
+            android:entryValues="@array/formatoReconocimiento"
+            android:key="list_preference_1"
+            android:persistent="true"
+            android:selectable="true"
+            android:shouldDisableView="true"
+            android:title="Formato" />
+        <MultiSelectListPreference
+            android:defaultValue="@array/modosReconocimiento"
+            android:enabled="true"
+            android:entries="@array/modosReconocimiento"
+            android:entryValues="@array/modosInteraccion"
+            android:key="multi_select_list_preference_1"
+            android:persistent="true"
+            android:selectable="true"
+            android:title="Modos" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Mini Juego">
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/miniJuegos"
+            android:entryValues="@array/miniJuegos"
+            android:key="list_preference_1"
+            android:title="List preference" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Modo de interaccion">
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/modosInteraccion"
+            android:entryValues="@array/modosInteraccion"
+            android:key="list_preference_1"
+            android:title="List preference" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Ajustes">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="switch_preference_1"
+            android:title="Switch preference" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="switch_preference_1"
+            android:title="Switch preference" />
+    </PreferenceCategory>
+</PreferenceScreen>
