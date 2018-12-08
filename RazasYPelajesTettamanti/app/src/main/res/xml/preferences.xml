@@ -10,20 +10,17 @@
             android:enabled="true"
             android:entries="@array/formatoReconocimiento"
             android:entryValues="@array/formatoReconocimiento"
-            android:key="list_preference_1"
+            android:key="list_formato_reconocimiento"
             android:persistent="true"
-            android:selectable="true"
-            android:shouldDisableView="true"
-            android:title="Formato" />
+            android:title="Seleccione el formato de reconocimiento" />
         <MultiSelectListPreference
             android:defaultValue="@array/modosReconocimiento"
             android:enabled="true"
             android:entries="@array/modosReconocimiento"
             android:entryValues="@array/modosInteraccion"
-            android:key="multi_select_list_preference_1"
+            android:key="multi_select_modo_reconocimiento"
             android:persistent="true"
-            android:selectable="true"
-            android:title="Modos" />
+            android:title="Seleccione el modo de reconocimiento" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Mini Juego">
 
@@ -31,8 +28,9 @@
             android:defaultValue="1"
             android:entries="@array/miniJuegos"
             android:entryValues="@array/miniJuegos"
-            android:key="list_preference_1"
-            android:title="List preference" />
+            android:key="list_mini_juego"
+            android:title="Seleccione mini juego"
+            android:persistent="true"/>
     </PreferenceCategory>
     <PreferenceCategory android:title="Modo de interaccion">
 
@@ -40,18 +38,21 @@
             android:defaultValue="1"
             android:entries="@array/modosInteraccion"
             android:entryValues="@array/modosInteraccion"
-            android:key="list_preference_1"
-            android:title="List preference" />
+            android:key="list_modo_interaccion"
+            android:persistent="true"
+            android:title="Modos de interacción" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Ajustes">
 
         <SwitchPreference
             android:defaultValue="false"
-            android:key="switch_preference_1"
-            android:title="Switch preference" />
+            android:key="switch_nivel"
+            android:persistent="true"
+            android:title="Seleccione nivel" />
         <SwitchPreference
             android:defaultValue="false"
-            android:key="switch_preference_1"
-            android:title="Switch preference" />
+            android:key="switch_voice"
+            android:persistent="true"
+            android:title="Seleccione tipo de voz" />
     </PreferenceCategory>
 </PreferenceScreen>
