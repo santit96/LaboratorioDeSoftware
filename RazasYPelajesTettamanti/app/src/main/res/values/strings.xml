@@ -3,4 +3,21 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="resultado_correcto">Correcto!</string>
+    <string name="resultado_incorrecto">Incorrecto</string>
+
+    <string-array name="pelajes">
+        <item>Zaino</item>
+        <item>Gateado</item>
+        <item>Alazan</item>
+        <item>Tordillo</item>
+    </string-array>
+
+    <string-array name="razas">
+        <item>Criollo</item>
+        <item>Frison</item>
+        <item>Pura Sangre</item>
+        <item>Mustang</item>
+    </string-array>
 </resources>
