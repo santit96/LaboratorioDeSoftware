@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/imagenes"
-        android:layout_width="687dp"
+        android:layout_width="0dp"
         android:layout_height="138dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="8dp"
@@ -20,10 +20,10 @@
         android:paddingBottom="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.603">
+        app:layout_constraintVertical_bias="0.656">
 
         <ImageView
             android:id="@+id/imagen1"
@@ -60,7 +60,7 @@
 
         <ImageView
             android:id="@+id/imagen4"
-            android:layout_width="149dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -73,12 +73,12 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="402dp"
-        android:layout_height="79dp"
+        android:layout_height="78dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="148dp"
+        android:layout_marginEnd="200dp"
         android:layout_marginBottom="8dp"
-        android:gravity="center_vertical|center_horizontal"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,22 +89,23 @@
 
         <TextView
             android:id="@+id/pelajeORaza"
-            android:layout_width="668dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Raza o pelaje"
-            android:textAlignment="center"
+            android:textAlignment="textEnd"
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textSize="50sp" />
 
         <ImageView
             android:id="@+id/voz"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:clickable="true"
-            android:focusable="auto"
+            android:focusable="true"
             app:srcCompat="@drawable/voz" />
 
     </LinearLayout>
@@ -122,10 +123,10 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.724"
+        app:layout_constraintHorizontal_bias="0.704"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.972">
+        app:layout_constraintVertical_bias="1.0">
 
         <ImageView
             android:id="@+id/imagen-resultado"
@@ -140,35 +141,23 @@
             android:id="@+id/resultado"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="-50dp"
+            android:layout_marginStart="-50dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="Resultado"
-            android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textSize="25sp"
             android:textStyle="bold" />
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="56dp"
+        android:id="@+id/botonAyuda"
+        android:layout_width="47dp"
         android:layout_height="42dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ayuda" />
-
-    <ImageButton
-        android:id="@+id/botonVolver"
-        android:layout_width="102dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="16dp"
-        android:adjustViewBounds="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/boton_volver" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.example.santi.razasypelajestettamanti;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,18 +19,9 @@ public class MinijuegoRazasyPelajes extends AppCompatActivity {
         setContentView(R.layout.activity_minijuego_razasy_pelajes_interaccion_b);
 
         TextView pelajeORaza = (TextView) findViewById(R.id.pelajeORaza);
-        String pelaje= getResources().getStringArray(R.array.pelajes)[1];
+        String pelaje= getResources().getStringArray(R.array.razas)[0];
         pelajeORaza.setText("");
         pelajeORaza.append(pelaje);
-
-        ImageButton botonVolver = (ImageButton) findViewById(R.id.botonVolver);
-        botonVolver.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                finish();
-                Intent intentMain = new Intent(MinijuegoRazasyPelajes.this, RazasYPelajes.class);
-                startActivity(intentMain);
-            }
-        });
 
         this.setImagesBehaviour();
 
@@ -48,19 +40,23 @@ public class MinijuegoRazasyPelajes extends AppCompatActivity {
                     TextView texto_resultado = (TextView) findViewById(R.id.resultado);
                     texto_resultado.setText("");
                     ImageView image_resultado = (ImageView) findViewById(R.id.imagen_resultado);
+                    MediaPlayer mp;
 
                     if (v.getId() == R.id.imagen1) {
                         texto_resultado.append(getResources().getString(R.string.resultado_correcto));
                         texto_resultado.setTextColor(getResources().getColor(R.color.colorGanador));
                         image_resultado.setImageResource(R.drawable.check);
+                        mp = MediaPlayer.create(v.getContext(),R.raw.correcto);
 
                     }
                     else {
                         texto_resultado.append(getResources().getString(R.string.resultado_incorrecto));
                         texto_resultado.setTextColor(getResources().getColor(R.color.colorPerdedor));
                         image_resultado.setImageResource(R.drawable.x);
+                        mp = MediaPlayer.create(v.getContext(),R.raw.incorrecto);
 
                     }
+                    mp.start();
                 }
             });
         }
