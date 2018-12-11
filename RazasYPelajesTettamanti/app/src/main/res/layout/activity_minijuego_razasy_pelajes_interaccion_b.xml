@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".MinijuegoRazasyPelajes">
 
     <LinearLayout
         android:id="@+id/imagenes"
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
+        android:layout_width="687dp"
+        android:layout_height="138dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="4dp"
         android:gravity="center_horizontal"
@@ -19,53 +20,54 @@
         android:paddingBottom="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.858"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.812">
+        app:layout_constraintVertical_bias="0.603">
 
         <ImageView
             android:id="@+id/imagen1"
-            android:layout_width="120dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/background_dark"
             android:clickable="true"
-            android:focusable="auto"
-            app:srcCompat="@drawable/fondo" />
+            android:focusable="true"
+            app:srcCompat="@drawable/imagen1" />
 
         <ImageView
             android:id="@+id/imagen2"
-            android:layout_width="120dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/background_dark"
             android:clickable="true"
             android:focusable="true"
-            app:srcCompat="@drawable/fondo" />
+            app:srcCompat="@drawable/imagen2" />
 
         <ImageView
             android:id="@+id/imagen3"
-            android:layout_width="120dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/background_dark"
             android:clickable="true"
             android:focusable="true"
-            app:srcCompat="@drawable/fondo" />
+            app:srcCompat="@drawable/imagen3" />
 
         <ImageView
             android:id="@+id/imagen4"
-            android:layout_width="120dp"
+            android:layout_width="149dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/background_dark"
             android:clickable="true"
             android:focusable="true"
-            app:srcCompat="@drawable/fondo" />
+            app:srcCompat="@drawable/imagen4" />
     </LinearLayout>
 
     <LinearLayout
@@ -83,49 +85,54 @@
         app:layout_constraintHorizontal_bias="0.82"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.204">
+        app:layout_constraintVertical_bias="0.081">
 
         <TextView
             android:id="@+id/pelajeORaza"
-            android:layout_width="wrap_content"
+            android:layout_width="668dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:text="Raza o pelaje"
+            android:textAlignment="center"
+            android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textSize="50sp" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
+        <ImageView
+            android:id="@+id/voz"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:focusable="true"
-            app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
+            android:focusable="auto"
+            app:srcCompat="@drawable/voz" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layout-resultado"
-        android:layout_width="557dp"
-        android:layout_height="36dp"
+        android:layout_width="370dp"
+        android:layout_height="47dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:gravity="center_vertical|center_horizontal"
+        android:gravity="center"
         android:orientation="horizontal"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.724"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.979">
+        app:layout_constraintVertical_bias="0.972">
 
         <ImageView
             android:id="@+id/imagen-resultado"
             android:layout_width="1dp"
-            android:layout_height="20dp"
+            android:layout_height="28dp"
             android:layout_weight="1"
-            android:focusable="auto"
+            android:background="@color/colorAccent"
             android:src="@drawable/check"
             android:visibility="visible" />
 
@@ -133,12 +140,35 @@
             android:id="@+id/resultado"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="-100dp"
+            android:layout_marginLeft="-50dp"
             android:layout_weight="1"
+            android:gravity="center_vertical"
             android:text="Resultado"
             android:textAlignment="textStart"
+            android:textAllCaps="false"
             android:textSize="25sp"
             android:textStyle="bold" />
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="56dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ayuda" />
+
+    <ImageButton
+        android:id="@+id/botonVolver"
+        android:layout_width="102dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="16dp"
+        android:adjustViewBounds="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/boton_volver" />
 
 </android.support.constraint.ConstraintLayout>

@@ -17,8 +17,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Preferences" android:screenOrientation="landscape"/>
-        <activity android:name=".MinijuegoRazasyPelajes" android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".Preferences"
+            android:screenOrientation="landscape"
+            android:parentActivityName="com.example.santi.razasypelajestettamanti.RazasYPelajes"
+        />
+        <activity
+            android:name=".MinijuegoRazasyPelajes"
+            android:screenOrientation="landscape"
+            android:parentActivityName="com.example.santi.razasypelajestettamanti.RazasYPelajes"
+        />
     </application>
 
 </manifest>

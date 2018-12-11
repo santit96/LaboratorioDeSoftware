@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class RazasYPelajes extends AppCompatActivity {
 
@@ -15,15 +16,15 @@ public class RazasYPelajes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_razas_ypelajes);
 
-        FloatingActionButton settingButton = (FloatingActionButton) findViewById(R.id.settingsButton);
-        settingButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton settingsButton = (ImageButton) findViewById(R.id.botonConfiguracion);
+        settingsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intentSettings = new Intent(RazasYPelajes.this, Preferences.class);
                 startActivity(intentSettings);
              }
        });
 
-        Button playButton = (Button) findViewById(R.id.playButton);
+        ImageButton playButton = (ImageButton) findViewById(R.id.botonJugar);
          playButton.setOnClickListener(new View.OnClickListener() {
            public void onClick(View v) {
                Intent intentMinijuego = new Intent(RazasYPelajes.this, MinijuegoRazasyPelajes.class);

@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="Modo Reconocimiento">
+    <PreferenceCategory
+        android:textAppearance="@color/colorAccent"
+        android:title="Modo Reconocimiento">
 
         <ListPreference
             android:defaultValue="1"
@@ -22,17 +24,21 @@
             android:persistent="true"
             android:title="Seleccione el modo de reconocimiento" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="Mini Juego">
+    <PreferenceCategory
+        android:textAppearance="@color/colorAccent"
+        android:title="Mini Juego">
 
         <ListPreference
             android:defaultValue="1"
             android:entries="@array/miniJuegos"
             android:entryValues="@array/miniJuegos"
             android:key="list_mini_juego"
-            android:title="Seleccione mini juego"
-            android:persistent="true"/>
+            android:persistent="true"
+            android:title="Seleccione mini juego" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="Modo de interaccion">
+    <PreferenceCategory
+        android:textAppearance="@color/colorAccent"
+        android:title="Modo de interaccion">
 
         <ListPreference
             android:defaultValue="1"
@@ -42,14 +48,18 @@
             android:persistent="true"
             android:title="Modos de interacción" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="Ajustes">
+    <PreferenceCategory
+        android:textAppearance="@color/colorAccent"
+        android:title="Ajustes">
 
         <SwitchPreference
             android:defaultValue="false"
             android:key="switch_nivel"
             android:persistent="true"
+            android:switchTextAppearance="@color/colorAccent"
             android:switchTextOff="Nivel 1"
             android:switchTextOn="Nivel 2"
+            android:textStyle="bold"
             android:title="Seleccione nivel" />
         <SwitchPreference
             android:defaultValue="false"

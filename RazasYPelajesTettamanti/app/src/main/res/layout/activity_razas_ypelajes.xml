@@ -4,56 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/Base.Theme.AppCompat.Light"
+    android:background="@android:color/background_light"
     tools:context=".RazasYPelajes">
 
     <LinearLayout
         android:layout_width="160dp"
         android:layout_height="222dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="8dp"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.699"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/playButton"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="Jugar"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textStyle="bold" />
+        <ImageButton
+            android:id="@+id/botonJugar"
+            android:layout_width="137dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            app:srcCompat="@drawable/boton_jugar" />
+
+        <ImageButton
+            android:id="@+id/botonReconocimiento"
+            android:layout_width="137dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            app:srcCompat="@drawable/boton_reconocimiento" />
 
         <Button
             android:id="@+id/exitButton"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:clickable="true"
             android:focusable="true"
             android:text="Salir"
             android:textAlignment="center"
+            android:textColorLink="@color/colorAccent"
             android:textStyle="bold" />
 
     </LinearLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/settingsButton"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.216"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.578"
+        app:srcCompat="@drawable/imagen_cedica" />
+
+    <ImageButton
+        android:id="@+id/botonConfiguracion"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="44dp"
-        android:clickable="true"
-        android:focusable="true"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_preferences" />
+        app:srcCompat="@drawable/boton_config" />
+
+    <ImageButton
+        android:id="@+id/botonAyuda"
+        android:layout_width="43dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ayuda" />
 </android.support.constraint.ConstraintLayout>
