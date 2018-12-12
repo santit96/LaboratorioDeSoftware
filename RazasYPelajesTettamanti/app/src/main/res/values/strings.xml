@@ -6,6 +6,9 @@
 
     <string name="resultado_correcto">Correcto!</string>
     <string name="resultado_incorrecto">Incorrecto</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="ayudaPrincipal">Selecciona Jugar si quieres empezar el minijuego, el boton de arriba a la derecha para ir a la pantalla de preferencias, o salir si deseas salir de la aplicacion</string>
+    <string name="ayudaMinijuego">Selecciona la imagen del caballo correspondiente a la raza indicada en pantalla</string>
 
     <string-array name="pelajes">
         <item>Zaino</item>

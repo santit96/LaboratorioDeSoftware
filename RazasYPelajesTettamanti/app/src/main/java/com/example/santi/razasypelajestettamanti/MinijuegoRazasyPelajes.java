@@ -2,6 +2,7 @@ package com.example.santi.razasypelajestettamanti;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ public class MinijuegoRazasyPelajes extends AppCompatActivity {
         pelajeORaza.setText("");
         pelajeORaza.append(pelaje);
 
+        this.setAyudaBehaviour();
         this.setImagesBehaviour();
 
     }
@@ -60,6 +62,18 @@ public class MinijuegoRazasyPelajes extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void setAyudaBehaviour(){
+        ImageButton botonAyuda = (ImageButton) findViewById(R.id.botonAyuda);
+        botonAyuda.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                AyudaFragment ayuda = new AyudaFragment();
+                ayuda.setText(R.string.ayudaMinijuego);
+                ayuda.show(fragmentManager, "dialog");
+            }
+        });
     }
 }
 

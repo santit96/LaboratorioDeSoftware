@@ -150,12 +150,13 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <ImageView
+    <ImageButton
         android:id="@+id/botonAyuda"
-        android:layout_width="47dp"
-        android:layout_height="42dp"
+        android:layout_width="52dp"
+        android:layout_height="43dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="28dp"
+        android:background="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ayuda" />
