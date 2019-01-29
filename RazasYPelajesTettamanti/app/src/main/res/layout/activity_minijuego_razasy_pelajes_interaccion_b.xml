@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/imagenes"
         android:layout_width="0dp"
-        android:layout_height="138dp"
+        android:layout_height="233dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="5dp"
@@ -27,44 +27,44 @@
 
         <ImageView
             android:id="@+id/imagen1"
-            android:layout_width="150dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@android:color/background_dark"
+            android:background="@android:color/background_light"
             android:clickable="true"
             android:focusable="true"
             app:srcCompat="@drawable/imagen1" />
 
         <ImageView
             android:id="@+id/imagen2"
-            android:layout_width="150dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@android:color/background_dark"
+            android:background="@android:color/background_light"
             android:clickable="true"
             android:focusable="true"
             app:srcCompat="@drawable/imagen2" />
 
         <ImageView
             android:id="@+id/imagen3"
-            android:layout_width="150dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@android:color/background_dark"
+            android:background="@android:color/background_light"
             android:clickable="true"
             android:focusable="true"
             app:srcCompat="@drawable/imagen3" />
 
         <ImageView
             android:id="@+id/imagen4"
-            android:layout_width="150dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@android:color/background_dark"
+            android:background="@android:color/background_light"
             android:clickable="true"
             android:focusable="true"
             app:srcCompat="@drawable/imagen4" />
@@ -72,36 +72,38 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="402dp"
-        android:layout_height="78dp"
+        android:layout_width="507dp"
+        android:layout_height="128dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="200dp"
         android:layout_marginBottom="8dp"
-        android:gravity="center_vertical"
+        android:gravity="center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081">
+        app:layout_constraintVertical_bias="0.15">
 
         <TextView
             android:id="@+id/pelajeORaza"
-            android:layout_width="match_parent"
+            android:layout_width="399dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Raza o pelaje"
             android:textAlignment="textEnd"
-            android:textAllCaps="false"
+            android:textAllCaps="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textSize="50sp" />
+            android:textColor="@android:color/background_light"
+            android:textSize="64sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/voz"
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="88dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:clickable="true"
@@ -112,8 +114,8 @@
 
     <LinearLayout
         android:id="@+id/layout-resultado"
-        android:layout_width="370dp"
-        android:layout_height="47dp"
+        android:layout_width="619dp"
+        android:layout_height="83dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -123,15 +125,15 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.704"
+        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.957">
 
         <ImageView
             android:id="@+id/imagen-resultado"
             android:layout_width="1dp"
-            android:layout_height="28dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@color/colorAccent"
             android:src="@drawable/check"
@@ -146,14 +148,14 @@
             android:gravity="center_vertical"
             android:text="Resultado"
             android:textAllCaps="false"
-            android:textSize="25sp"
+            android:textSize="50sp"
             android:textStyle="bold" />
     </LinearLayout>
 
     <ImageButton
         android:id="@+id/botonAyuda"
-        android:layout_width="52dp"
-        android:layout_height="43dp"
+        android:layout_width="128dp"
+        android:layout_height="103dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="28dp"
         android:background="@color/colorAccent"

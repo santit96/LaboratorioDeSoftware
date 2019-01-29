@@ -8,8 +8,8 @@
     tools:context=".RazasYPelajes">
 
     <LinearLayout
-        android:layout_width="160dp"
-        android:layout_height="222dp"
+        android:layout_width="314dp"
+        android:layout_height="227dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="8dp"
@@ -18,64 +18,49 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.791"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.812">
 
         <ImageButton
             android:id="@+id/botonJugar"
-            android:layout_width="137dp"
-            android:layout_height="47dp"
+            android:layout_width="250dp"
+            android:layout_height="80dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            app:srcCompat="@drawable/boton_jugar" />
+            android:src="@drawable/boton_jugar"
+            tools:src="@drawable/boton_jugar" />
 
         <ImageButton
             android:id="@+id/botonReconocimiento"
-            android:layout_width="137dp"
-            android:layout_height="47dp"
+            android:layout_width="250dp"
+            android:layout_height="55dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             app:srcCompat="@drawable/boton_reconocimiento" />
-
-        <Button
-            android:id="@+id/exitButton"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="145dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="Salir"
-            android:textAlignment="center"
-            android:textColorLink="@color/colorAccent"
-            android:textStyle="bold" />
 
     </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="581dp"
+        android:layout_height="423dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.578"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/imagen_cedica" />
 
     <ImageButton
         android:id="@+id/botonConfiguracion"
-        android:layout_width="59dp"
-        android:layout_height="52dp"
+        android:layout_width="150dp"
+        android:layout_height="125dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="40dp"
         android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -83,10 +68,10 @@
 
     <ImageButton
         android:id="@+id/botonAyuda"
-        android:layout_width="43dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="150dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
         android:background="@android:color/transparent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -21,8 +21,6 @@ public class RazasYPelajes extends AppCompatActivity {
 
         this.setBotonJugarBehaviour();
 
-        this.setBotonSalirBehaviour();
-
         this.setBotonAyudaBehaviour();
 
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
@@ -44,17 +42,6 @@ public class RazasYPelajes extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentMinijuego = new Intent(RazasYPelajes.this, MinijuegoRazasyPelajes.class);
                 startActivity(intentMinijuego);
-            }
-        });
-    }
-
-    private void setBotonSalirBehaviour(){
-        Button exitButton = (Button) findViewById(R.id.exitButton);
-        exitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                System.exit(0);
             }
         });
     }
