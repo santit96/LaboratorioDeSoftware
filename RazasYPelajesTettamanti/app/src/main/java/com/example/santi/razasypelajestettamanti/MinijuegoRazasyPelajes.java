@@ -1,9 +1,7 @@
 package com.example.santi.razasypelajestettamanti;
 
-import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +15,7 @@ public class MinijuegoRazasyPelajes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_minijuego_razasy_pelajes_interaccion_b);
+        setContentView(R.layout.interaccion_palabra_imagen);
 
         TextView pelajeORaza = (TextView) findViewById(R.id.pelajeORaza);
         String pelaje= getResources().getStringArray(R.array.razas)[0];

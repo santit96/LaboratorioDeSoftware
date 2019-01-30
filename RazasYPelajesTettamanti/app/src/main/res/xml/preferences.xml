@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout="@layout/activity_preferences">
 
     <PreferenceCategory
         android:textAppearance="@color/colorAccent"
+        android:theme="?android:attr/preferenceStyle"
         android:title="Modo Reconocimiento">
 
         <ListPreference
