@@ -39,46 +39,42 @@
         <ImageView
             android:id="@+id/imagen1"
             android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@android:color/background_light"
             android:clickable="true"
-            android:focusable="true"
-            app:srcCompat="@drawable/imagen1" />
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/imagen2"
             android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@android:color/background_light"
             android:clickable="true"
-            android:focusable="true"
-            app:srcCompat="@drawable/imagen2" />
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/imagen3"
             android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@android:color/background_light"
             android:clickable="true"
-            android:focusable="true"
-            app:srcCompat="@drawable/imagen3" />
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/imagen4"
             android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@android:color/background_light"
             android:clickable="true"
-            android:focusable="true"
-            app:srcCompat="@drawable/imagen4" />
+            android:focusable="true" />
     </LinearLayout>
 
     <LinearLayout

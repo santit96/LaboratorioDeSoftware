@@ -23,7 +23,7 @@
             android:defaultValue="@array/modosReconocimiento"
             android:enabled="true"
             android:entries="@array/modosReconocimiento"
-            android:entryValues="@array/modosInteraccion"
+            android:entryValues="@array/modosReconocimiento"
             android:key="multi_select_modo_reconocimiento"
             android:persistent="true"
             android:title="Seleccione el modo de reconocimiento" />
@@ -41,20 +41,6 @@
             android:persistent="true"
             android:summary="%s"
             android:title="Seleccione mini juego" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:textAppearance="@color/colorAccent"
-        android:title="Modo de interaccion">
-
-        <ListPreference
-            android:defaultValue="1"
-            android:entries="@array/modosInteraccion"
-            android:entryValues="@array/modosInteraccion"
-            android:key="list_modo_interaccion"
-            android:persistent="true"
-            android:summary="%s"
-            android:title="Modos de interacción" />
     </PreferenceCategory>
 
     <PreferenceCategory

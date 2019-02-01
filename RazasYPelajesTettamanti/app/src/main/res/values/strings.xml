@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">RazasYPelajesTettamanti</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <string name="resultado_correcto">Correcto!</string>
     <string name="resultado_incorrecto">Incorrecto</string>
     <string name="aceptar">Aceptar</string>
@@ -23,4 +20,5 @@
         <item>Pura Sangre</item>
         <item>Mustang</item>
     </string-array>
+    <string name="title_activity_reconocimiento">Reconocimiento</string>
 </resources>

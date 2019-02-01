@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="modosInteraccion">
-        <item>Interacción A</item>
-        <item>Interacción B</item>
-        <item>Interacción C</item>
-    </string-array>
-
     <string-array name="miniJuegos">
-        <item>Razas y Pelajes</item>
-        <item>Razas y Pelajes juntas</item>
-        <item>Cruza</item>
+        <item>Razas y Pelajes: Imagen-Palabras</item>
+        <item>Razas y Pelajes: Palabra-Imagenes</item>
+        <item>Cruza: Imagen-Imagenes</item>
     </string-array>
 
     <string-array name="formatoReconocimiento">
@@ -18,8 +12,7 @@
     </string-array>
 
     <string-array name="modosReconocimiento">
-        <item>Razas</item>
-        <item>Pelajes</item>
+        <item>Razas y pelajes</item>
         <item>Cruzas</item>
     </string-array>
 

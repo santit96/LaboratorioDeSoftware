@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class RazasYPelajes extends AppCompatActivity {
@@ -18,6 +17,8 @@ public class RazasYPelajes extends AppCompatActivity {
         setContentView(R.layout.activity_razas_ypelajes);
 
         this.setBotonSettingsBehaviour();
+
+        this.setBotonReconocimientoBehaviour();
 
         this.setBotonJugarBehaviour();
 
@@ -54,6 +55,16 @@ public class RazasYPelajes extends AppCompatActivity {
                 AyudaFragment ayuda = new AyudaFragment();
                 ayuda.setText(R.string.ayudaPrincipal);
                 ayuda.show(fragmentManager, "dialog");
+            }
+        });
+    }
+
+    private void setBotonReconocimientoBehaviour(){
+        ImageButton botonReconocimiento = (ImageButton) findViewById(R.id.botonReconocimiento);
+        botonReconocimiento.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intentReconocimiento = new Intent(RazasYPelajes.this, Reconocimiento.class);
+                startActivity(intentReconocimiento);
             }
         });
     }
