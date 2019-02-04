@@ -25,7 +25,7 @@
             android:parentActivityName=".RazasYPelajes"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".MinijuegoRazasyPelajes"
+            android:name=".RazasyPelajesPalabraImagen"
             android:parentActivityName=".RazasYPelajes"
             android:screenOrientation="landscape" />
         <activity

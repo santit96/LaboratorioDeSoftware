@@ -5,4 +5,5 @@
     <color name="colorAccent">#f5d42f</color>
     <color name="colorGanador">#2aa112</color>
     <color name="colorPerdedor">#ee2b15</color>
+    <color name="transparente">#00ffffff</color>
 </resources>

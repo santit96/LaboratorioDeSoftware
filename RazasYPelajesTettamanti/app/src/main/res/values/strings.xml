@@ -8,9 +8,9 @@
     <string name="ayudaMinijuego">Selecciona la imagen del caballo correspondiente a la raza indicada en pantalla</string>
 
     <string-array name="pelajes">
-        <item>Zaino</item>
         <item>Gateado</item>
-        <item>Alazan</item>
+        <item>Oscuro</item>
+        <item>Zaino</item>
         <item>Tordillo</item>
     </string-array>
 

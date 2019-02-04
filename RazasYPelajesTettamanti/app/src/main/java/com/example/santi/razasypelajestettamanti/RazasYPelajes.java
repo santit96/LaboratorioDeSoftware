@@ -1,8 +1,8 @@
 package com.example.santi.razasypelajestettamanti;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,7 +41,17 @@ public class RazasYPelajes extends AppCompatActivity {
         ImageButton playButton = (ImageButton) findViewById(R.id.botonJugar);
         playButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intentMinijuego = new Intent(RazasYPelajes.this, MinijuegoRazasyPelajes.class);
+                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(v.getContext());
+                String formato = sp.getString("list_mini_juego","Razas y Pelajes: Imagen-Palabras");
+                Intent intentMinijuego = new Intent(RazasYPelajes.this, RazasyPelajesPalabraImagen.class);
+                switch (formato){
+                    case "Razas y Pelajes: Palabra-Imagenes":
+                        intentMinijuego = new Intent(RazasYPelajes.this, RazasyPelajesPalabraImagen.class);
+                        break;
+                    case "Cruza: Imagen-Imagenes":
+                        intentMinijuego = new Intent(RazasYPelajes.this, RazasYPelajes.class);
+                        break;
+                }
                 startActivity(intentMinijuego);
             }
         });
