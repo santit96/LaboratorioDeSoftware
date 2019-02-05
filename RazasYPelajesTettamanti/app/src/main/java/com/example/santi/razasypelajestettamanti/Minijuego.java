@@ -18,6 +18,7 @@ public abstract class Minijuego extends AppCompatActivity {
 
     protected Caballo[] caballos;
     protected Caballo caballoGanador;
+    protected int idGanador;
 
     protected ConstraintLayout currentLayout;
 

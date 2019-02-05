@@ -11,18 +11,18 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class RazasyPelajesPalabraImagen extends Minijuego {
+public class CruzasImagenImagen extends Minijuego {
 
     protected ConstraintLayout setLayout(){
-        return (ConstraintLayout) View.inflate(this, R.layout.interaccion_palabra_imagen, null);
+        return (ConstraintLayout) View.inflate(this, R.layout.interaccion_imagen_imagen, null);
     }
 
     protected Class getSiguienteMinijuego(){
-        return RazasyPelajesImagenPalabra.class;
+        return RazasYPelajes.class;
     };
 
     protected void updateRonda(){
-        this.setRazaOPelajeText();
+        this.setImagen();
         this.setImages();
         this.setImagesBehaviour();
     }
@@ -55,26 +55,12 @@ public class RazasyPelajesPalabraImagen extends Minijuego {
         for (int i=0; i<cantImagenes; i++){
             imagenes.getChildAt(i).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-
-                    LinearLayout resultado = (LinearLayout) findViewById(R.id.layout_resultado);
-                    resultado.setVisibility(View.VISIBLE);
-                    TextView texto_resultado = (TextView) findViewById(R.id.resultado);
-                    texto_resultado.setText("");
-                    ImageView image_resultado = (ImageView) findViewById(R.id.imagen_resultado);
                     MediaPlayer mp;
                     if (v.getId() == idGanador) {
-                        texto_resultado.append(getResources().getString(R.string.resultado_correcto));
-                        texto_resultado.setTextColor(getResources().getColor(R.color.colorGanador));
-                        image_resultado.setImageResource(R.drawable.check);
                         mp = MediaPlayer.create(v.getContext(),R.raw.relincho);
-
                     }
                     else {
-                        texto_resultado.append(getResources().getString(R.string.resultado_incorrecto));
-                        texto_resultado.setTextColor(getResources().getColor(R.color.colorPerdedor));
-                        image_resultado.setImageResource(R.drawable.x);
                         mp = MediaPlayer.create(v.getContext(),R.raw.resoplido);
-
                     }
                     mp.start();
                     nuevaRonda();
@@ -83,24 +69,13 @@ public class RazasyPelajesPalabraImagen extends Minijuego {
         }
     }
 
-    private void setRazaOPelajeText(){
-        TextView pelajeORaza = (TextView) findViewById(R.id.pelajeORaza);
-        String pelajeORazaText = this.setPelajeORaza();
-        pelajeORaza.setText("");
-        pelajeORaza.append(pelajeORazaText);
-    }
-
-    private String setPelajeORaza(){
-        Random rand = new Random();
-        int eleccion = rand.nextInt(2);
-        if (eleccion == 1)
-            return caballoGanador.pelaje;
-        else
-            return caballoGanador.raza;
+    private void setImagen(){
+        ImageView imagenCaballo = (ImageView) findViewById(R.id.imagenCaballo2);
+        imagenCaballo.setImageResource(caballoGanador.imagen);
     }
 
     protected void setAyudaBehaviour(){
-        ImageButton botonAyuda = (ImageButton) findViewById(R.id.botonAyuda);
+        ImageButton botonAyuda = (ImageButton) findViewById(R.id.botonAyuda3);
         botonAyuda.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
@@ -116,4 +91,3 @@ public class RazasyPelajesPalabraImagen extends Minijuego {
 
     }
 }
-

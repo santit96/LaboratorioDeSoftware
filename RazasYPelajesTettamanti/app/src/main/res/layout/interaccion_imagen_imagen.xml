@@ -58,8 +58,7 @@
             android:layout_marginRight="10dp"
             android:background="@android:color/background_light"
             android:clickable="true"
-            android:focusable="true"
-            app:srcCompat="@android:color/background_light" />
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/imagen2"
@@ -91,16 +90,5 @@
             android:clickable="true"
             android:focusable="true" />
     </LinearLayout>
-
-    <ImageButton
-        android:id="@+id/home3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/home" />
 
 </android.support.constraint.ConstraintLayout>
