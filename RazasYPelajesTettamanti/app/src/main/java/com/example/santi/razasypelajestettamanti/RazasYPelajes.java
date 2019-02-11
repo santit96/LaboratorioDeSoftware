@@ -14,7 +14,7 @@ public class RazasYPelajes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_razas_ypelajes);
+        setContentView(R.layout.activity_razas_y_pelajes);
 
         this.setBotonSettingsBehaviour();
 
@@ -43,15 +43,14 @@ public class RazasYPelajes extends AppCompatActivity {
             public void onClick(View v) {
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(v.getContext());
                 String formato = sp.getString("list_mini_juego","Razas y Pelajes: Imagen-Palabras");
-                Intent intentMinijuego = new Intent(RazasYPelajes.this, RazasyPelajesPalabraImagen.class);
-                switch (formato){
-                    case "Razas y Pelajes: Palabra-Imagenes":
-                        intentMinijuego = new Intent(RazasYPelajes.this, RazasyPelajesPalabraImagen.class);
-                        break;
-                    case "Cruza: Imagen-Imagenes":
-                        intentMinijuego = new Intent(RazasYPelajes.this, RazasYPelajes.class);
-                        break;
-                }
+                Intent intentMinijuego;
+                if (formato.equals("Razas y Pelajes: Imagen-Palabras"))
+                    intentMinijuego = new Intent(RazasYPelajes.this, RazasyPelajesImagenPalabra.class);
+                else
+                    intentMinijuego = new Intent(RazasYPelajes.this, RazasyPelajesPalabraImagen.class);
+                Bundle b = new Bundle();
+                b.putBoolean("firstActivity",true);
+                intentMinijuego.putExtras(b);
                 startActivity(intentMinijuego);
             }
         });

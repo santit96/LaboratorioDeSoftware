@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@drawable/bg_amarillo"
     tools:context=".RazasyPelajesPalabraImagen">
 
     <LinearLayout
-        android:id="@+id/imagenes"
+        android:id="@+id/opciones"
         android:layout_width="0dp"
         android:layout_height="233dp"
         android:layout_marginStart="5dp"
@@ -98,13 +98,13 @@
 
         <ImageView
             android:id="@+id/voz"
-            android:layout_width="70dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
-            app:srcCompat="@drawable/voz" />
+            app:srcCompat="@drawable/audio_regular" />
 
     </LinearLayout>
 
@@ -131,7 +131,7 @@
             android:layout_width="1dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:background="@color/colorAccent"
+            android:background="@color/transparente"
             android:src="@drawable/check"
             android:visibility="visible" />
 
@@ -147,16 +147,5 @@
             android:textSize="50sp"
             android:textStyle="bold" />
     </LinearLayout>
-
-    <ImageButton
-        android:id="@+id/botonAyuda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
-        android:background="@color/colorAccent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ayuda" />
 
 </android.support.constraint.ConstraintLayout>

@@ -4,18 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent">
+    android:background="@drawable/bg_amarillo">
 
-    <ImageButton
-        android:id="@+id/botonAyuda2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
-        android:background="@color/colorAccent"
+    <LinearLayout
+        android:id="@+id/layout-resultado"
+        android:layout_width="619dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ayuda" />
+        app:layout_constraintVertical_bias="0.978">
+
+        <ImageView
+            android:id="@+id/imagen-resultado"
+            android:layout_width="1dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/transparente"
+            android:src="@drawable/check"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/resultado"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="-50dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Resultado"
+            android:textAllCaps="false"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/imagenCaballo"
@@ -29,21 +58,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.142"
+        app:layout_constraintVertical_bias="0.08"
         app:srcCompat="@android:color/background_light" />
 
     <LinearLayout
-        android:id="@+id/razasOPelajes"
+        android:id="@+id/opciones"
         android:layout_width="1086dp"
-        android:layout_height="204dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="104dp"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
@@ -68,13 +96,13 @@
 
             <ImageView
                 android:id="@+id/voz1"
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="-60dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="0dp"
                 android:layout_weight="1"
                 android:clickable="true"
                 android:focusable="true"
-                app:srcCompat="@drawable/voz" />
+                app:srcCompat="@drawable/audio_regular" />
         </LinearLayout>
 
         <LinearLayout
@@ -99,13 +127,13 @@
 
             <ImageView
                 android:id="@+id/voz2"
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="-60dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="0dp"
                 android:layout_weight="1"
                 android:clickable="true"
                 android:focusable="true"
-                app:srcCompat="@drawable/voz" />
+                app:srcCompat="@drawable/audio_regular" />
         </LinearLayout>
 
         <LinearLayout
@@ -130,13 +158,13 @@
 
             <ImageView
                 android:id="@+id/voz3"
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="-60dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="0dp"
                 android:layout_weight="1"
                 android:clickable="true"
                 android:focusable="true"
-                app:srcCompat="@drawable/voz" />
+                app:srcCompat="@drawable/audio_regular" />
         </LinearLayout>
 
         <LinearLayout
@@ -161,13 +189,13 @@
 
             <ImageView
                 android:id="@+id/voz4"
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="-60dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="0dp"
                 android:layout_weight="1"
                 android:clickable="true"
                 android:focusable="true"
-                app:srcCompat="@drawable/voz" />
+                app:srcCompat="@drawable/audio_regular" />
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

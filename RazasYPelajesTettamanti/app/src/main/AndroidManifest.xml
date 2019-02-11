@@ -39,8 +39,8 @@
         <activity
             android:name=".Reconocimiento"
             android:label="@string/title_activity_reconocimiento"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:parentActivityName=".RazasYPelajes"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>
