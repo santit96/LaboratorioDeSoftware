@@ -20,30 +20,12 @@ public class RazasyPelajesImagenPalabra extends InteraccionMinijuego {
             return RazasyPelajesImagenPalabra.class;
         else
             return CruzasImagenImagen.class;
-    };
+    }
 
-    protected void setOpciones(){
-        LinearLayout textos = (LinearLayout) findViewById(R.id.opciones);
-        Random rand = new Random();
-        int posicionGanadora = rand.nextInt(4);
-        for (int i=0; i<textos.getChildCount(); i++){
-            LinearLayout caja = (LinearLayout) textos.getChildAt(i);
-            TextView texto = ((TextView) caja.getChildAt(0));
-            texto.setText("");
-            if (i == posicionGanadora) {
-                texto.append(caballoGanador.raza);
-                idGanador = texto.getId();
-            }
-            else if (caballos[i].imagen == caballoGanador.imagen) {
-                int index = i+1;
-                if (index == textos.getChildCount())
-                    index = 0;
-                texto.append(caballos[index].raza);
-            }
-            else
-                texto.append(caballos[i].raza);
-        }
-
+    protected void setContenidoAOpcion(View v, int indiceCaballos){
+        TextView texto = (TextView) v;
+        texto.setText("");
+        texto.append(caballos[indiceCaballos].raza);
     }
 
     @Override

@@ -1,8 +1,10 @@
 package com.example.santi.razasypelajestettamanti;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -45,9 +47,9 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
 
     protected abstract Class getSiguienteMinijuego();
 
-    protected abstract void setOpciones();
-
     protected abstract void setIncognita();
+
+    protected abstract void setContenidoAOpcion(View v, int indiceCaballo);
 
 
     protected void nuevaRonda() {
@@ -70,12 +72,41 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
     }
 
     protected void updateRonda(){
-        this.setIncognita();
         this.setOpciones();
+        this.setIncognita();
         this.setOpcionesBehaviour();
     }
 
-    protected void setOpcionesBehaviour() {
+    private void setOpciones(){
+        LinearLayout opciones = (LinearLayout) findViewById(R.id.opciones);
+        Random rand = new Random();
+        int indiceCaballos = rand.nextInt(caballos.length);
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        boolean dificil = sp.getBoolean("switch_nivel",false);
+        int posicionGanadora;
+        if (dificil)
+            posicionGanadora = rand.nextInt(4);
+        else
+            posicionGanadora = rand.nextInt(2)+1;
+        for (int i=0; i<opciones.getChildCount(); i++){
+            View opcion =  this.getOpcionesChild(opciones,i);
+            if (indiceCaballos == caballos.length)
+                indiceCaballos = 0;
+            if (i == posicionGanadora) {
+                caballoGanador = caballos[indiceCaballos];
+                idGanador = opcion.getId();
+            }
+            this.setContenidoAOpcion(opcion,indiceCaballos);
+            indiceCaballos++;
+        }
+        if (!dificil){
+            opciones.getChildAt(0).setVisibility(View.INVISIBLE);
+            opciones.getChildAt(3).setVisibility(View.INVISIBLE);
+        }
+
+    }
+
+    private void setOpcionesBehaviour() {
         LinearLayout opciones = (LinearLayout) findViewById(R.id.opciones);
         int cantImagenes = opciones.getChildCount();
         for (int i=0; i<cantImagenes; i++){
@@ -91,7 +122,7 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
         return opciones.getChildAt(index);
     }
 
-    protected void setResultado(View v){
+    private void setResultado(View v){
         LinearLayout resultado = (LinearLayout) findViewById(R.id.layout_resultado);
         resultado.setVisibility(View.VISIBLE);
         TextView texto_resultado = (TextView) findViewById(R.id.resultado);

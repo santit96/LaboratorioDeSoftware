@@ -52,11 +52,11 @@
             android:key="switch_nivel"
             android:persistent="true"
             android:summary="Desactivado - Nivel 1 / Activado - Nivel 2 "
-            android:summaryOff="Nivel 1"
-            android:summaryOn="Nivel 2"
+            android:summaryOff="Facil"
+            android:summaryOn="Dificil"
             android:switchTextAppearance="@color/colorAccent"
-            android:switchTextOff="Nivel 1"
-            android:switchTextOn="Nivel 2"
+            android:switchTextOff="Facil"
+            android:switchTextOn="Dificil"
             android:textStyle="bold"
             android:title="Seleccione nivel" />
         <SwitchPreference

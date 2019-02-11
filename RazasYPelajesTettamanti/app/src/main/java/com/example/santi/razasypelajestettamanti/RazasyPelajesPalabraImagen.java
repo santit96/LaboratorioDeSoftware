@@ -22,27 +22,9 @@ public class RazasyPelajesPalabraImagen extends InteraccionMinijuego {
             return CruzasImagenImagen.class;
     };
 
-
-    protected void setOpciones(){
-        LinearLayout imagenes = (LinearLayout) findViewById(R.id.opciones);
-        Random rand = new Random();
-        int posicionGanadora = rand.nextInt(4);
-        for (int i=0; i<imagenes.getChildCount(); i++){
-            if (i == posicionGanadora) {
-                imagenes.getChildAt(i).setBackgroundResource(caballoGanador.imagen);
-                idGanador = imagenes.getChildAt(i).getId();
-            }
-            else if (caballos[i].imagen == caballoGanador.imagen) {
-                int index = i+1;
-                if (index == imagenes.getChildCount())
-                    index = 0;
-                imagenes.getChildAt(i).setBackgroundResource(caballos[index].imagen);
-            }
-            else
-                imagenes.getChildAt(i).setBackgroundResource(caballos[i].imagen);
-
-        }
-
+    protected void setContenidoAOpcion(View v, int indiceCaballos){
+        ImageView image = (ImageView) v;
+        image.setBackgroundResource(caballos[indiceCaballos].imagen);
     }
 
 
