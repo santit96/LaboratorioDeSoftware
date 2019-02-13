@@ -25,7 +25,23 @@ public class RazasyPelajesImagenPalabra extends InteraccionMinijuego {
     protected void setContenidoAOpcion(View v, int indiceCaballos){
         TextView texto = (TextView) v;
         texto.setText("");
-        texto.append(caballos[indiceCaballos].raza);
+        if (firstActivity) {
+            texto.append(this.pelajeORaza(indiceCaballos));
+        }
+        else{
+            texto.append(caballos[indiceCaballos].pelaje);
+            texto.append(" y ");
+            texto.append(caballos[indiceCaballos].raza);
+        }
+    }
+
+    private String pelajeORaza(int index){
+        Random rand = new Random();
+        int eleccion = rand.nextInt(2);
+        if (eleccion == 1)
+            return caballos[index].pelaje;
+        else
+            return caballos[index].raza;
     }
 
     @Override

@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout="@layout/activity_preferences">
+    android:persistent="true">
 
     <PreferenceCategory
         android:textAppearance="@color/colorAccent"
@@ -10,7 +10,7 @@
         android:title="Modo Reconocimiento">
 
         <ListPreference
-            android:defaultValue="1"
+            android:defaultValue="@array/formatoReconocimiento"
             android:enabled="true"
             android:entries="@array/formatoReconocimiento"
             android:entryValues="@array/formatoReconocimiento"
@@ -20,12 +20,12 @@
             android:title="Seleccione el formato de reconocimiento" />
 
         <MultiSelectListPreference
-            android:defaultValue="@array/modosReconocimiento"
             android:enabled="true"
             android:entries="@array/modosReconocimiento"
             android:entryValues="@array/modosReconocimiento"
             android:key="multi_select_modo_reconocimiento"
             android:persistent="true"
+            android:selectable="true"
             android:title="Seleccione el modo de reconocimiento" />
     </PreferenceCategory>
 
@@ -34,7 +34,7 @@
         android:title="Mini Juego">
 
         <ListPreference
-            android:defaultValue="1"
+            android:enabled="true"
             android:entries="@array/miniJuegos"
             android:entryValues="@array/miniJuegos"
             android:key="list_mini_juego"

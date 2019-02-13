@@ -1,12 +1,9 @@
 package com.example.santi.razasypelajestettamanti;
 
-import android.media.MediaPlayer;
 import android.support.constraint.ConstraintLayout;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import java.util.Random;
 
 public class RazasyPelajesPalabraImagen extends InteraccionMinijuego {
@@ -32,7 +29,14 @@ public class RazasyPelajesPalabraImagen extends InteraccionMinijuego {
         TextView pelajeORaza = (TextView) findViewById(R.id.pelajeORaza);
         String pelajeORazaText = this.setPelajeORaza();
         pelajeORaza.setText("");
-        pelajeORaza.append(pelajeORazaText);
+        if (firstActivity) {
+            pelajeORaza.append(pelajeORazaText);
+        }
+        else{
+            pelajeORaza.append(caballoGanador.pelaje);
+            pelajeORaza.append(" y ");
+            pelajeORaza.append(caballoGanador.raza);
+        }
     }
 
     private String setPelajeORaza(){

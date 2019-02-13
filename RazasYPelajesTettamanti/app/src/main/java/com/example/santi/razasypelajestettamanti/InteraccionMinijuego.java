@@ -2,25 +2,31 @@ package com.example.santi.razasypelajestettamanti;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.constraint.ConstraintLayout;
+import android.support.constraint.Constraints;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.lang.reflect.Field;
 import java.util.Random;
 
 public abstract class InteraccionMinijuego extends AppCompatActivity {
 
     protected final int CANTIDAD_RONDAS = 5;
+    protected final int RONDAS_A_GANAR = 3;
 
     protected int rondasJugadas = 0;
+    protected int rondasGanadas = 0;
 
     protected Caballo[] caballos;
     protected Caballo caballoGanador;
@@ -53,10 +59,11 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
 
 
     protected void nuevaRonda() {
-        if (rondasJugadas == CANTIDAD_RONDAS){
-            Intent siguienteMinijuego = new Intent(this, this.getSiguienteMinijuego());
-            siguienteMinijuego.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(siguienteMinijuego);
+        if (rondasJugadas == CANTIDAD_RONDAS && rondasGanadas >= RONDAS_A_GANAR ){
+            pantallaGanador();
+        }
+        else if (rondasJugadas == CANTIDAD_RONDAS){
+           pantallaPerdedor();
         }
         else{
             rondasJugadas++;
@@ -130,6 +137,7 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
         ImageView image_resultado = (ImageView) findViewById(R.id.imagen_resultado);
         MediaPlayer mp;
         if (v.getId() == idGanador) {
+            rondasGanadas++;
             texto_resultado.append(getResources().getString(R.string.resultado_correcto));
             texto_resultado.setTextColor(getResources().getColor(R.color.colorGanador));
             image_resultado.setImageResource(R.drawable.check);
@@ -162,11 +170,76 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
     private void setHomeBehaviour(ImageButton botonHome){
         botonHome.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent homeIntent = new Intent(v.getContext(), RazasYPelajes.class);
-                homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(homeIntent);
+                volverHome();
             }
         });
     }
 
+    protected void pantallaGanador(){
+        setAnimation();
+        ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.ventanaFinMinijuego);
+        layout.setVisibility(View.VISIBLE);
+        TextView text = (TextView) findViewById(R.id.infoFinMinijuego);
+        text.append("");
+        text.append(getResources().getString(R.string.info_ganador));
+        Button boton = (Button) findViewById(R.id.botonFinMinijuego);
+        boton.setText(getResources().getString(R.string.siguiente_minijuego));
+        boton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                siguienteMinijuego();
+            }
+        });
+    }
+
+    private void pantallaPerdedor(){
+        ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.ventanaFinMinijuego);
+        layout.setVisibility(View.VISIBLE);
+        TextView text = (TextView) findViewById(R.id.infoFinMinijuego);
+        text.append("");
+        text.append(getResources().getString(R.string.info_perdedor));
+        Button boton = (Button) findViewById(R.id.botonFinMinijuego);
+        boton.setText(getResources().getString(R.string.nuevo_intento));
+        boton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                volverHome();
+            }
+        });
+    }
+
+    private void volverHome(){
+        Intent mainActivity = new Intent(this, RazasYPelajes.class);
+        mainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(mainActivity);
+    }
+
+    protected void siguienteMinijuego(){
+        Intent siguienteMinijuego = new Intent(this, this.getSiguienteMinijuego());
+        siguienteMinijuego.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(siguienteMinijuego);
+    }
+
+    private void setAnimation(){
+        final AnimationDrawable anim;
+        ImageView img = new ImageView(getBaseContext());
+        img.setLayoutParams(new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.MATCH_PARENT,
+                ConstraintLayout.LayoutParams.MATCH_PARENT));
+        //img.setImageResource(R.drawable.confetti);
+        anim = new AnimationDrawable();
+        for (int i=0;i<6;i++) {
+            String name = "confetti_"+i;
+            anim.addFrame(getResources().getDrawable(getResources().getIdentifier(name, "drawable", getPackageName())), 200);
+        }
+        img.setImageDrawable(anim);
+        currentLayout.addView(img);
+        //anim = (AnimationDrawable)img.getDrawable();
+        Runnable run = new Runnable() {
+            @Override
+            public void run() {
+                anim.start();
+            }
+        };
+
+
+        img.post(run);
+    }
 }

@@ -6,6 +6,63 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_amarillo">
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/ventanaFinMinijuego"
+        android:layout_width="703dp"
+        android:layout_height="327dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_amarillo"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.359">
+
+        <TextView
+            android:id="@+id/infoFinMinijuego"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/botonFinMinijuego"
+            android:layout_width="310dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="44dp"
+            android:background="@android:color/white"
+            android:text="Button"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/infoFinMinijuego"
+            app:layout_constraintVertical_bias="0.877" />
+    </android.support.constraint.ConstraintLayout>
+
     <LinearLayout
         android:id="@+id/layout-resultado"
         android:layout_width="619dp"

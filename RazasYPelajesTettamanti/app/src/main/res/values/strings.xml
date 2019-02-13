@@ -5,7 +5,10 @@
     <string name="resultado_incorrecto">Incorrecto</string>
     <string name="aceptar">Aceptar</string>
     <string name="ayudaPrincipal">Selecciona Jugar si quieres empezar el minijuego, el boton de arriba a la derecha para ir a la pantalla de preferencias, o salir si deseas salir de la aplicacion</string>
-    <string name="ayudaMinijuego">Selecciona la imagen del caballo correspondiente a la raza indicada en pantalla</string>
+    <string name="siguiente_minijuego">Siguiente minijuego</string>
+    <string name="nuevo_intento">Intentar de nuevo</string>
+    <string name="info_ganador">Felicidades!, acertaste 3 o mas desafíos y pasaste al siguiente minijuego</string>
+    <string name="info_perdedor">No has pasado al siguiente nivel, puedes intentar nuevamente o volver a la pantalla de inicio</string>
 
     <string-array name="pelajes">
         <item>Gateado</item>
