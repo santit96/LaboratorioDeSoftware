@@ -40,7 +40,8 @@
             android:name=".Reconocimiento"
             android:label="@string/title_activity_reconocimiento"
             android:parentActivityName=".RazasYPelajes"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
+        <activity android:name=".Campeon"></activity>
     </application>
 
 </manifest>

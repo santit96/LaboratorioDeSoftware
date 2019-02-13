@@ -7,13 +7,14 @@
     <string name="ayudaPrincipal">Selecciona Jugar si quieres empezar el minijuego, el boton de arriba a la derecha para ir a la pantalla de preferencias, o salir si deseas salir de la aplicacion</string>
     <string name="siguiente_minijuego">Siguiente minijuego</string>
     <string name="nuevo_intento">Intentar de nuevo</string>
-    <string name="info_ganador">Felicidades!, acertaste 3 o mas desafíos y pasaste al siguiente minijuego</string>
+    <string name="info_ganador">Felicidades!, acertaste al menos 3 desafíos y pasaste al siguiente minijuego</string>
     <string name="info_perdedor">No has pasado al siguiente nivel, puedes intentar nuevamente o volver a la pantalla de inicio</string>
+    <string name="text_campeon">Felicidades! Has ganado todos los minijuegos y te has coronado campeon</string>
 
     <string-array name="pelajes">
         <item>Gateado</item>
         <item>Oscuro</item>
-        <item>Zaino</item>
+        <item>Colorado</item>
         <item>Tordillo</item>
     </string-array>
 
@@ -21,10 +22,10 @@
         <item>Criollo</item>
         <item>Frison</item>
         <item>Pura Sangre</item>
-        <item>Mustang</item>
+        <item>Arabe</item>
     </string-array>
+
+    <!-- do not remove -->
     <string name="title_activity_reconocimiento">Reconocimiento</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

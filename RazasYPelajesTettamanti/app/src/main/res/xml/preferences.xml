@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:persistent="true">
+   >
 
     <PreferenceCategory
         android:textAppearance="@color/colorAccent"
@@ -10,7 +10,6 @@
         android:title="Modo Reconocimiento">
 
         <ListPreference
-            android:defaultValue="@array/formatoReconocimiento"
             android:enabled="true"
             android:entries="@array/formatoReconocimiento"
             android:entryValues="@array/formatoReconocimiento"
@@ -20,7 +19,6 @@
             android:title="Seleccione el formato de reconocimiento" />
 
         <MultiSelectListPreference
-            android:enabled="true"
             android:entries="@array/modosReconocimiento"
             android:entryValues="@array/modosReconocimiento"
             android:key="multi_select_modo_reconocimiento"
@@ -51,7 +49,7 @@
             android:defaultValue="false"
             android:key="switch_nivel"
             android:persistent="true"
-            android:summary="Desactivado - Nivel 1 / Activado - Nivel 2 "
+            android:summary="Desactivado - Facil / Activado - Dificil "
             android:summaryOff="Facil"
             android:summaryOn="Dificil"
             android:switchTextAppearance="@color/colorAccent"

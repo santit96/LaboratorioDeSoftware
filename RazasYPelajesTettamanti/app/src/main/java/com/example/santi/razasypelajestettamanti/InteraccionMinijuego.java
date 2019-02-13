@@ -7,8 +7,6 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.constraint.ConstraintLayout;
-import android.support.constraint.Constraints;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -16,8 +14,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import java.lang.reflect.Field;
 import java.util.Random;
 
 public abstract class InteraccionMinijuego extends AppCompatActivity {
@@ -155,6 +151,88 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
         nuevaRonda();
     }
 
+
+    protected void pantallaGanador(){
+        prepararFinMinijuego();
+        setAnimation();
+        TextView text = (TextView) findViewById(R.id.infoFinMinijuego);
+        text.setText(getResources().getString(R.string.info_ganador));
+        Button boton = (Button) findViewById(R.id.botonFinMinijuego);
+        boton.setText(getResources().getString(R.string.siguiente_minijuego));
+        boton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                siguienteMinijuego();
+            }
+        });
+    }
+
+    private void pantallaPerdedor(){
+        prepararFinMinijuego();
+        TextView text = (TextView) findViewById(R.id.infoFinMinijuego);
+        text.setText(getResources().getString(R.string.info_perdedor));
+        Button boton = (Button) findViewById(R.id.botonFinMinijuego);
+        boton.setText(getResources().getString(R.string.nuevo_intento));
+        boton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                volverHome();
+                finish();
+            }
+        });
+    }
+
+    private void prepararFinMinijuego(){
+        LinearLayout opciones = (LinearLayout) findViewById(R.id.opciones);
+        int cantOpciones = opciones.getChildCount();
+        for (int i=0; i<cantOpciones; i++){
+            this.getOpcionesChild(opciones, i).setClickable(false);
+        }
+        ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.ventanaFinMinijuego);
+        layout.setVisibility(View.VISIBLE);
+        layout.bringToFront();
+        currentLayout.bringChildToFront(layout);
+    }
+
+    private void volverHome(){
+        Intent mainActivity = new Intent(this, RazasYPelajes.class);
+        mainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(mainActivity);
+        finish();
+    }
+
+    protected void siguienteMinijuego(){
+        Intent siguienteMinijuego = new Intent(this, this.getSiguienteMinijuego());
+        startActivity(siguienteMinijuego);
+        finish();
+    }
+
+    private void setAnimation(){
+        final AnimationDrawable anim;
+        ImageView img = new ImageView(getBaseContext());
+        img.setLayoutParams(new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.MATCH_PARENT,
+                ConstraintLayout.LayoutParams.MATCH_PARENT));
+        //img.setImageResource(R.drawable.confetti);
+        anim = new AnimationDrawable();
+        for (int i=0;i<6;i++) {
+            String name = "confetti_"+i;
+            anim.addFrame(getResources().getDrawable(getResources().getIdentifier(name, "drawable", getPackageName())), 200);
+        }
+        anim.addFrame(getResources().getDrawable(getResources().getIdentifier("confetti_30", "drawable", getPackageName())), 500);
+        anim.addFrame(getResources().getDrawable(getResources().getIdentifier("confetti_63", "drawable", getPackageName())), 200);
+
+        img.setImageDrawable(anim);
+        currentLayout.addView(img);
+        //anim = (AnimationDrawable)img.getDrawable();
+        Runnable run = new Runnable() {
+            @Override
+            public void run() {
+                anim.start();
+            }
+        };
+
+
+        img.post(run);
+    }
+
     protected void createBotonHome(){
         ImageButton botonHome = new ImageButton(this);
         ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT,ConstraintLayout.LayoutParams.WRAP_CONTENT);
@@ -173,73 +251,5 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
                 volverHome();
             }
         });
-    }
-
-    protected void pantallaGanador(){
-        setAnimation();
-        ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.ventanaFinMinijuego);
-        layout.setVisibility(View.VISIBLE);
-        TextView text = (TextView) findViewById(R.id.infoFinMinijuego);
-        text.append("");
-        text.append(getResources().getString(R.string.info_ganador));
-        Button boton = (Button) findViewById(R.id.botonFinMinijuego);
-        boton.setText(getResources().getString(R.string.siguiente_minijuego));
-        boton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                siguienteMinijuego();
-            }
-        });
-    }
-
-    private void pantallaPerdedor(){
-        ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.ventanaFinMinijuego);
-        layout.setVisibility(View.VISIBLE);
-        TextView text = (TextView) findViewById(R.id.infoFinMinijuego);
-        text.append("");
-        text.append(getResources().getString(R.string.info_perdedor));
-        Button boton = (Button) findViewById(R.id.botonFinMinijuego);
-        boton.setText(getResources().getString(R.string.nuevo_intento));
-        boton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                volverHome();
-            }
-        });
-    }
-
-    private void volverHome(){
-        Intent mainActivity = new Intent(this, RazasYPelajes.class);
-        mainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(mainActivity);
-    }
-
-    protected void siguienteMinijuego(){
-        Intent siguienteMinijuego = new Intent(this, this.getSiguienteMinijuego());
-        siguienteMinijuego.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(siguienteMinijuego);
-    }
-
-    private void setAnimation(){
-        final AnimationDrawable anim;
-        ImageView img = new ImageView(getBaseContext());
-        img.setLayoutParams(new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.MATCH_PARENT,
-                ConstraintLayout.LayoutParams.MATCH_PARENT));
-        //img.setImageResource(R.drawable.confetti);
-        anim = new AnimationDrawable();
-        for (int i=0;i<6;i++) {
-            String name = "confetti_"+i;
-            anim.addFrame(getResources().getDrawable(getResources().getIdentifier(name, "drawable", getPackageName())), 200);
-        }
-        img.setImageDrawable(anim);
-        currentLayout.addView(img);
-        //anim = (AnimationDrawable)img.getDrawable();
-        Runnable run = new Runnable() {
-            @Override
-            public void run() {
-                anim.start();
-            }
-        };
-
-
-        img.post(run);
     }
 }
