@@ -148,7 +148,8 @@
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="36sp" />
+                android:textSize="36sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/voz1"
@@ -178,7 +179,8 @@
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="36sp" />
+                android:textSize="36sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/voz2"
@@ -208,7 +210,8 @@
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="36sp" />
+                android:textSize="36sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/voz3"
@@ -238,7 +241,8 @@
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="36sp" />
+                android:textSize="36sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/voz4"

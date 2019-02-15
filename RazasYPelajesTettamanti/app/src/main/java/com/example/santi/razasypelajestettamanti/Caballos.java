@@ -11,7 +11,8 @@ public class Caballos {
 
     private Context context;
 
-    private int[] imagenes = new int[]{R.drawable.juana_cuartodemilla_bayo,R.drawable.hualfin_criollo_horsepicaso,R.drawable.bionda_cruzaarabe_alazanruano,R.drawable.imagen3};
+    private int[] imagenes = new int[]{R.drawable.imagen1,R.drawable.imagen2,R.drawable.imagen4,R.drawable.imagen3};
+   // private int[] imagenes = new int[]{R.drawable.juana_cuartodemilla_bayo,R.drawable.hualfin_criollo_horsepicaso,R.drawable.bionda_cruzaarabe_alazanruano,R.drawable.imagen3};
     //private int[] audios_voz_femenina_razas = new int[]{R.raw.voz_femenina_raza_1,R.raw.voz_femenina_raza_2,R.raw.voz_femenina_raza_3,R.raw.voz_femenina_raza_4};
     //private int[] audios_voz_femenina_pelajes = new int[]{R.raw.voz_femenina_pelaje_1,R.raw.voz_femenina_pelaje_2,R.raw.voz_femenina_pelaje_3,R.raw.voz_femenina_pelaje_4};
     Caballos (Context context){

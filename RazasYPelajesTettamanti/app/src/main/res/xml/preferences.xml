@@ -37,7 +37,7 @@
             android:key="list_mini_juego"
             android:persistent="true"
             android:summary="%s"
-            android:title="Seleccione mini juego" />
+            android:title="Seleccione el formato de mini juego" />
     </PreferenceCategory>
 
     <PreferenceCategory

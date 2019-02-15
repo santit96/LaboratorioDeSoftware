@@ -28,4 +28,8 @@ public class CruzasImagenImagen extends InteraccionMinijuego {
         siguienteMinijuego();
     }
 
+    protected int getCurrentActivityNumber(){
+        return 3;
+    }
+
 }

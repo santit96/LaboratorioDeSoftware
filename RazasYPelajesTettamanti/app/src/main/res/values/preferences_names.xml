@@ -3,6 +3,9 @@
     <string-array name="miniJuegos">
         <item>Razas y Pelajes: Imagen-Palabras</item>
         <item>Razas y Pelajes: Palabra-Imagenes</item>
+    </string-array>
+
+    <string-array name="miniJuegosDisabled">
         <item>Cruza: Imagen-Imagenes</item>
     </string-array>
 

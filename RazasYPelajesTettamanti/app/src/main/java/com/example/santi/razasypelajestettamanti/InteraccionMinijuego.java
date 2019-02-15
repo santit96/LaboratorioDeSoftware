@@ -196,8 +196,7 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
         Intent mainActivity = new Intent(this, RazasYPelajes.class);
         mainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         Bundle b = new Bundle();
-        if (!firstActivity)
-            b.putInt("currentActivity",2);
+        b.putInt("currentActivity",getCurrentActivityNumber());
         mainActivity.putExtras(b);
         startActivity(mainActivity);
         finish();
@@ -214,9 +213,8 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
         ImageView img = new ImageView(getBaseContext());
         img.setLayoutParams(new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.MATCH_PARENT,
                 ConstraintLayout.LayoutParams.MATCH_PARENT));
-        //img.setImageResource(R.drawable.confetti);
         anim = new AnimationDrawable();
-        for (int i=0;i<64;i+=10) {
+        for (int i=0;i<64;i+=4) {
             String name = "confetti_"+i;
             anim.addFrame(getResources().getDrawable(getResources().getIdentifier(name, "drawable", getPackageName())), 150);
             System.gc();
@@ -225,7 +223,6 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
 
         img.setImageDrawable(anim);
         currentLayout.addView(img);
-        //anim = (AnimationDrawable)img.getDrawable();
         Runnable run = new Runnable() {
             @Override
             public void run() {
@@ -255,5 +252,10 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
                 volverHome();
             }
         });
+    }
+
+    protected int getCurrentActivityNumber(){
+        if (firstActivity) return 1;
+        else return 2;
     }
 }

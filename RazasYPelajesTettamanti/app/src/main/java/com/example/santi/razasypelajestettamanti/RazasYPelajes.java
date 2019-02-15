@@ -39,6 +39,11 @@ public class RazasYPelajes extends AppCompatActivity {
         settingsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intentSettings = new Intent(RazasYPelajes.this, Preferences.class);
+                if (currentActivity == 3) {
+                    Bundle b = new Bundle();
+                    b.putBoolean("lastMinijuego", true);
+                    intentSettings.putExtras(b);
+                }
                 startActivity(intentSettings);
             }
         });
@@ -51,13 +56,26 @@ public class RazasYPelajes extends AppCompatActivity {
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(v.getContext());
                 String formato = sp.getString("list_mini_juego","Razas y Pelajes: Imagen-Palabras");
                 Intent intentMinijuego;
-                if (formato.equals("Razas y Pelajes: Imagen-Palabras"))
-                    intentMinijuego = new Intent(RazasYPelajes.this, RazasyPelajesImagenPalabra.class);
-                else
-                    intentMinijuego = new Intent(RazasYPelajes.this, RazasyPelajesPalabraImagen.class);
-                Bundle b = new Bundle();
-                b.putBoolean("firstActivity",true);
-                intentMinijuego.putExtras(b);
+                switch (currentActivity) {
+                    case 2:
+                        if (formato.equals("Razas y Pelajes: Imagen-Palabras"))
+                            intentMinijuego = new Intent(RazasYPelajes.this, RazasyPelajesImagenPalabra.class);
+                        else
+                            intentMinijuego = new Intent(RazasYPelajes.this, RazasyPelajesPalabraImagen.class);
+                        break;
+                    case 3:
+                        intentMinijuego = new Intent(RazasYPelajes.this, CruzasImagenImagen.class);
+                        break;
+                    default:
+                        if (formato.equals("Razas y Pelajes: Imagen-Palabras"))
+                            intentMinijuego = new Intent(RazasYPelajes.this, RazasyPelajesImagenPalabra.class);
+                        else
+                            intentMinijuego = new Intent(RazasYPelajes.this, RazasyPelajesPalabraImagen.class);
+                        Bundle b = new Bundle();
+                        b.putBoolean("firstActivity", true);
+                        intentMinijuego.putExtras(b);
+                        break;
+                }
                 startActivity(intentMinijuego);
             }
         });
