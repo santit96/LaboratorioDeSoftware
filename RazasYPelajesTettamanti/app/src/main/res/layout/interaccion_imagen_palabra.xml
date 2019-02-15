@@ -14,7 +14,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="23dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/bg_amarillo"
+        android:background="@color/colorAccent"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -148,8 +148,7 @@
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="45sp"
-                android:textStyle="bold" />
+                android:textSize="36sp" />
 
             <ImageView
                 android:id="@+id/voz1"
@@ -179,8 +178,7 @@
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="45sp"
-                android:textStyle="bold" />
+                android:textSize="36sp" />
 
             <ImageView
                 android:id="@+id/voz2"
@@ -210,8 +208,7 @@
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="45sp"
-                android:textStyle="bold" />
+                android:textSize="36sp" />
 
             <ImageView
                 android:id="@+id/voz3"
@@ -241,8 +238,7 @@
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="45sp"
-                android:textStyle="bold" />
+                android:textSize="36sp" />
 
             <ImageView
                 android:id="@+id/voz4"

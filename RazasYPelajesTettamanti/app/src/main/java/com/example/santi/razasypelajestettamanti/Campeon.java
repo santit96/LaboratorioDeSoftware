@@ -31,11 +31,12 @@ public class Campeon extends AppCompatActivity {
     private void setCopaAnimation(ImageView copa){
         final AnimationDrawable anim;
         anim = new AnimationDrawable();
-        for (int i=1;i<3;i++) {
+        for (int i=1;i<2;i+=1) {
             String name = "copa_"+i;
+            System.gc();
             anim.addFrame(getResources().getDrawable(getResources().getIdentifier(name, "drawable", getPackageName())), 200);
         }
-
+        anim.setOneShot(false);
         copa.setImageDrawable(anim);
         Runnable run = new Runnable() {
             @Override

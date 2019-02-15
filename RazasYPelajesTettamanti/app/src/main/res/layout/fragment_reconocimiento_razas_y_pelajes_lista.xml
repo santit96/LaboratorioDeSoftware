@@ -18,7 +18,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView2"
             android:layout_width="50dp"
             android:layout_height="180dp"
             android:layout_weight="1"
@@ -35,7 +35,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/razaOPelaje1"
+                android:id="@+id/razaOPelaje2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
@@ -46,7 +46,7 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/voz1"
+                android:id="@+id/voz2"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="0dp"
@@ -57,10 +57,12 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView2"
             android:layout_width="500dp"
             android:layout_height="150dp"
-            android:text="TextView" />
+            android:background="@color/colorAccent"
+            android:text="TextView"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <LinearLayout
@@ -71,7 +73,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView3"
             android:layout_width="50dp"
             android:layout_height="180dp"
             android:layout_weight="1"
@@ -88,7 +90,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/razaOPelaje1"
+                android:id="@+id/razaOPelaje3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
@@ -99,7 +101,7 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/voz1"
+                android:id="@+id/voz3"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="0dp"
@@ -110,10 +112,12 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView3"
             android:layout_width="500dp"
             android:layout_height="150dp"
-            android:text="TextView" />
+            android:background="@color/colorAccent"
+            android:text="TextView"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <LinearLayout
@@ -124,7 +128,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView4"
             android:layout_width="50dp"
             android:layout_height="180dp"
             android:layout_weight="1"
@@ -141,7 +145,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/razaOPelaje1"
+                android:id="@+id/razaOPelaje4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
@@ -152,7 +156,7 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/voz1"
+                android:id="@+id/voz4"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="0dp"
@@ -163,10 +167,12 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView4"
             android:layout_width="500dp"
             android:layout_height="150dp"
-            android:text="TextView" />
+            android:background="@color/colorAccent"
+            android:text="TextView"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <LinearLayout
@@ -177,7 +183,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView5"
             android:layout_width="50dp"
             android:layout_height="180dp"
             android:layout_weight="1"
@@ -194,7 +200,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/razaOPelaje1"
+                android:id="@+id/razaOPelaje5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
@@ -205,7 +211,7 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/voz1"
+                android:id="@+id/voz5"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="0dp"
@@ -216,10 +222,12 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView5"
             android:layout_width="500dp"
             android:layout_height="150dp"
-            android:text="TextView" />
+            android:background="@color/colorAccent"
+            android:text="TextView"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <LinearLayout
@@ -230,7 +238,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView6"
             android:layout_width="50dp"
             android:layout_height="180dp"
             android:layout_weight="1"
@@ -247,7 +255,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/razaOPelaje1"
+                android:id="@+id/razaOPelaje6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
@@ -258,7 +266,7 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/voz1"
+                android:id="@+id/voz6"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="0dp"
@@ -269,10 +277,12 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView6"
             android:layout_width="500dp"
             android:layout_height="150dp"
-            android:text="TextView" />
+            android:background="@color/colorAccent"
+            android:text="TextView"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
 </LinearLayout>

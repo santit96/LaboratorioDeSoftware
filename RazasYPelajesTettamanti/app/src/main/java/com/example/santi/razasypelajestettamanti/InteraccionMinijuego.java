@@ -51,7 +51,7 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
 
     protected abstract void setIncognita();
 
-    protected abstract void setContenidoAOpcion(View v, int indiceCaballo);
+    protected abstract void setContenidoAOpcion(View v, int indiceCaballo, int indiceOpcion);
 
 
     protected void nuevaRonda() {
@@ -99,7 +99,7 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
                 caballoGanador = caballos[indiceCaballos];
                 idGanador = opcion.getId();
             }
-            this.setContenidoAOpcion(opcion,indiceCaballos);
+            this.setContenidoAOpcion(opcion,indiceCaballos,i);
             indiceCaballos++;
         }
         if (!dificil){
@@ -195,6 +195,10 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
     private void volverHome(){
         Intent mainActivity = new Intent(this, RazasYPelajes.class);
         mainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Bundle b = new Bundle();
+        if (!firstActivity)
+            b.putInt("currentActivity",2);
+        mainActivity.putExtras(b);
         startActivity(mainActivity);
         finish();
     }
@@ -212,12 +216,12 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
                 ConstraintLayout.LayoutParams.MATCH_PARENT));
         //img.setImageResource(R.drawable.confetti);
         anim = new AnimationDrawable();
-        for (int i=0;i<6;i++) {
+        for (int i=0;i<64;i+=10) {
             String name = "confetti_"+i;
-            anim.addFrame(getResources().getDrawable(getResources().getIdentifier(name, "drawable", getPackageName())), 200);
+            anim.addFrame(getResources().getDrawable(getResources().getIdentifier(name, "drawable", getPackageName())), 150);
+            System.gc();
+
         }
-        anim.addFrame(getResources().getDrawable(getResources().getIdentifier("confetti_30", "drawable", getPackageName())), 500);
-        anim.addFrame(getResources().getDrawable(getResources().getIdentifier("confetti_63", "drawable", getPackageName())), 200);
 
         img.setImageDrawable(anim);
         currentLayout.addView(img);

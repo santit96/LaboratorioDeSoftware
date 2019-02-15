@@ -1,5 +1,6 @@
 package com.example.santi.razasypelajestettamanti;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class RazasYPelajes extends AppCompatActivity {
+
+    private int currentActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,10 @@ public class RazasYPelajes extends AppCompatActivity {
         this.setBotonJugarBehaviour();
 
         this.setBotonAyudaBehaviour();
+
+        Bundle b = getIntent().getExtras();
+        if(b != null)
+            currentActivity = b.getInt("currentActivity");
 
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
     }

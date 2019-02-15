@@ -14,7 +14,7 @@ public class CruzasImagenImagen extends InteraccionMinijuego {
         return Campeon.class;
     };
 
-    protected void setContenidoAOpcion(View v, int indiceCaballos){
+    protected void setContenidoAOpcion(View v, int indiceCaballos, int indiceOpcion){
         ImageView image = (ImageView) v;
         image.setBackgroundResource(caballos[indiceCaballos].imagen);
     }

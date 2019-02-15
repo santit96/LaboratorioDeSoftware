@@ -12,17 +12,17 @@
     <string name="text_campeon">Felicidades! Has ganado todos los minijuegos y te has coronado campeon</string>
 
     <string-array name="pelajes">
-        <item>Gateado</item>
-        <item>Oscuro</item>
-        <item>Colorado</item>
-        <item>Tordillo</item>
+        <item>Bayo</item>
+        <item>Picaso</item>
+        <item>Alazán Ruano</item>
+        <item>Zaino</item>
     </string-array>
 
     <string-array name="razas">
+        <item>Cuarto de Milla</item>
         <item>Criollo</item>
-        <item>Frison</item>
+        <item>Cruza Árabe</item>
         <item>Pura Sangre</item>
-        <item>Arabe</item>
     </string-array>
 
     <!-- do not remove -->
