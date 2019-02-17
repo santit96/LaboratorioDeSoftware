@@ -40,6 +40,11 @@ public class Reconocimiento extends AppCompatActivity {
             public void onClick(View v) {
                 Intent homeIntent = new Intent(v.getContext(), RazasYPelajes.class);
                 homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                Bundle b = getIntent().getExtras();
+                if(b != null) {
+                    b.putInt("currentActivity", b.getInt("currentActivity"));
+                    homeIntent.putExtras(b);
+                }
                 startActivity(homeIntent);
             }
         });

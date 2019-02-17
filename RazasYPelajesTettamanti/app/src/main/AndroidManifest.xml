@@ -26,15 +26,12 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".RazasyPelajesPalabraImagen"
-            android:parentActivityName=".RazasYPelajes"
             android:screenOrientation="landscape" />
         <activity
             android:name=".RazasyPelajesImagenPalabra"
-            android:parentActivityName=".RazasYPelajes"
             android:screenOrientation="landscape" />
         <activity
             android:name=".CruzasImagenImagen"
-            android:parentActivityName=".RazasYPelajes"
             android:screenOrientation="landscape" />
         <activity
             android:name=".Reconocimiento"

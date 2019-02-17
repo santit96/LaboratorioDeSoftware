@@ -174,10 +174,18 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
         boton.setText(getResources().getString(R.string.nuevo_intento));
         boton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                volverHome();
-                finish();
+                resetActivity();
             }
         });
+    }
+
+    private void resetActivity(){
+        Intent currentActivity = new Intent(this, this.getClass());
+        Bundle b = new Bundle();
+        b.putBoolean("firstActivity",firstActivity);
+        currentActivity.putExtras(b);
+        startActivity(currentActivity);
+        finish();
     }
 
     private void prepararFinMinijuego(){

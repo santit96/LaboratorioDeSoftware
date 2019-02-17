@@ -12,7 +12,7 @@ import android.widget.ImageButton;
 
 public class RazasYPelajes extends AppCompatActivity {
 
-    private int currentActivity;
+    private int currentActivity = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +98,9 @@ public class RazasYPelajes extends AppCompatActivity {
         botonReconocimiento.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intentReconocimiento = new Intent(RazasYPelajes.this, Reconocimiento.class);
+                Bundle b = new Bundle();
+                b.putInt("currentActivity", currentActivity);
+                intentReconocimiento.putExtras(b);
                 startActivity(intentReconocimiento);
             }
         });

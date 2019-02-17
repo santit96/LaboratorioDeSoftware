@@ -59,10 +59,13 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="500dp"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:background="@color/colorAccent"
-            android:text="TextView"
-            android:textColor="@android:color/white" />
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut est varius, aliquet sapien vel, convallis ipsum. Donec auctor orci libero, vitae luctus lectus scelerisque vel. Donec fermentum tortor purus, ut scelerisque enim malesuada ut. Maecenas vitae diam id enim rhoncus vestibulum nec ac nulla. Nulla mattis ipsum et finibus convallis. Sed consectetur libero sed odio volutpat pretium. Donec ac mattis quam, at suscipit felis. Pellentesque ipsum eros, eleifend eu sem finibus, iaculis congue enim. Donec ut eleifend nibh. "
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -113,10 +116,13 @@
         <TextView
             android:id="@+id/textView3"
             android:layout_width="500dp"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:background="@color/colorAccent"
-            android:text="TextView"
-            android:textColor="@android:color/white" />
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut est varius, aliquet sapien vel, convallis ipsum. Donec auctor orci libero, vitae luctus lectus scelerisque vel. Donec fermentum tortor purus, ut scelerisque enim malesuada ut. Maecenas vitae diam id enim rhoncus vestibulum nec ac nulla. Nulla mattis ipsum et finibus convallis. Sed consectetur libero sed odio volutpat pretium. Donec ac mattis quam, at suscipit felis. Pellentesque ipsum eros, eleifend eu sem finibus, iaculis congue enim. Donec ut eleifend nibh. "
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -167,10 +173,13 @@
         <TextView
             android:id="@+id/textView4"
             android:layout_width="500dp"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:background="@color/colorAccent"
-            android:text="TextView"
-            android:textColor="@android:color/white" />
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut est varius, aliquet sapien vel, convallis ipsum. Donec auctor orci libero, vitae luctus lectus scelerisque vel. Donec fermentum tortor purus, ut scelerisque enim malesuada ut. Maecenas vitae diam id enim rhoncus vestibulum nec ac nulla. Nulla mattis ipsum et finibus convallis. Sed consectetur libero sed odio volutpat pretium. Donec ac mattis quam, at suscipit felis. Pellentesque ipsum eros, eleifend eu sem finibus, iaculis congue enim. Donec ut eleifend nibh. "
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -221,10 +230,13 @@
         <TextView
             android:id="@+id/textView5"
             android:layout_width="500dp"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:background="@color/colorAccent"
-            android:text="TextView"
-            android:textColor="@android:color/white" />
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut est varius, aliquet sapien vel, convallis ipsum. Donec auctor orci libero, vitae luctus lectus scelerisque vel. Donec fermentum tortor purus, ut scelerisque enim malesuada ut. Maecenas vitae diam id enim rhoncus vestibulum nec ac nulla. Nulla mattis ipsum et finibus convallis. Sed consectetur libero sed odio volutpat pretium. Donec ac mattis quam, at suscipit felis. Pellentesque ipsum eros, eleifend eu sem finibus, iaculis congue enim. Donec ut eleifend nibh. "
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
     </LinearLayout>
 
 </LinearLayout>
