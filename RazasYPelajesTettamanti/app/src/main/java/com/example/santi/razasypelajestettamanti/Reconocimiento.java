@@ -7,9 +7,9 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
+import java.util.Set;
 
 public class Reconocimiento extends AppCompatActivity {
 
@@ -24,13 +24,20 @@ public class Reconocimiento extends AppCompatActivity {
     private void setFragmentListaOMatriz(){
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         String formato = sp.getString("list_formato_reconocimiento", "");
+        Set<String> modosReconocimiento = sp.getStringSet("multi_select_modo_reconocimiento",null);
         LinearLayout fragContainer = (LinearLayout) findViewById(R.id.listaLista);
 
         if (formato.equals("Lista")) {
-            getFragmentManager().beginTransaction().add(fragContainer.getId(), new ReconocimientoRazasYPelajesLista(), "someTag1").commit();
+            if (modosReconocimiento.contains("Razas y pelajes"))
+                getFragmentManager().beginTransaction().add(fragContainer.getId(), new ReconocimientoRazasYPelajesLista(), "someTag1").commit();
+            if (modosReconocimiento.contains("Cruzas"))
+                getFragmentManager().beginTransaction().add(fragContainer.getId(), new ReconocimientoCruzasLista(), "someTag1").commit();
         }
         else {
-            getFragmentManager().beginTransaction().add(fragContainer.getId(), new ReconocimientoRazasYPelajesMatriz(), "someTag1").commit();
+            if (modosReconocimiento.contains("Razas y pelajes"))
+                getFragmentManager().beginTransaction().add(fragContainer.getId(), new ReconocimientoRazasYPelajesMatriz(), "someTag1").commit();
+            if (modosReconocimiento.contains("Cruzas"))
+                getFragmentManager().beginTransaction().add(fragContainer.getId(), new ReconocimientoCruzasMatriz(), "someTag1").commit();
         }
     }
 

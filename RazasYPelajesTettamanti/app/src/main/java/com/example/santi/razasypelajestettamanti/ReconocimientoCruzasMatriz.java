@@ -1,14 +1,11 @@
 package com.example.santi.razasypelajestettamanti;
 
-
-public class ReconocimientoRazasYPelajesLista extends ReconocimientoLista {
-
+public class ReconocimientoCruzasMatriz extends ReconocimientoMatriz {
     protected void setCaballos(){
         caballos = new Caballos(getActivity()).caballos;
     }
 
     protected String getTituloReconocimiento(){
-        return "Razas y Pelajes";
+        return "Cruzas";
     }
-
 }
