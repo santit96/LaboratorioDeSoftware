@@ -1,6 +1,8 @@
 package com.example.santi.razasypelajestettamanti;
 
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
+import android.preference.PreferenceManager;
 import android.support.constraint.ConstraintLayout;
 import android.view.View;
 import android.widget.ImageView;
@@ -32,18 +34,23 @@ public class RazasyPelajesPalabraImagen extends InteraccionMinijuego {
         TextView pelajeORaza = (TextView) findViewById(R.id.pelajeORaza);
         String pelajeORazaText = this.setPelajeORaza();
         pelajeORaza.setText("");
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean voz_femenina = sp.getBoolean("switch_voz",false);
         if (firstActivity) {
             pelajeORaza.append(pelajeORazaText);
-            if (this.pelajeORaza == 1)
-                this.setAudio(caballoGanador.audio_pelaje_femenino);
-            else
-                this.setAudio(caballoGanador.audio_raza_femenino);
+            if (this.pelajeORaza == 1 && voz_femenina){
+                    this.setAudio(caballoGanador.audio_pelaje_femenino);
+            }
+            else if (voz_femenina){
+                    this.setAudio(caballoGanador.audio_raza_femenino);
+            }
         }
         else{
             pelajeORaza.append(caballoGanador.raza);
             pelajeORaza.append(" y ");
             pelajeORaza.append(caballoGanador.pelaje);
-            this.setAudio(caballoGanador.audio_pelajeyraza_femenino);
+            if (voz_femenina)
+                this.setAudio(caballoGanador.audio_pelajeyraza_femenino);
         }
 
 

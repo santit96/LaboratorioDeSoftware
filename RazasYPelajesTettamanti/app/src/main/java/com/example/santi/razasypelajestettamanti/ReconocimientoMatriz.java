@@ -1,8 +1,10 @@
 package com.example.santi.razasypelajestettamanti;
 
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,8 +55,12 @@ public abstract class ReconocimientoMatriz extends Fragment {
                 ImageView audio = (ImageView) infoCaballo.getChildAt(2);
                 audio.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-                        MediaPlayer mp = MediaPlayer.create(v.getContext(), caballos[indice].audio_pelajeyraza_femenino);
-                        mp.start();
+                        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(v.getContext());
+                        boolean voz_femenina = sp.getBoolean("switch_voz",false);
+                        if (voz_femenina){
+                            MediaPlayer mp = MediaPlayer.create(v.getContext(), caballos[indice].audio_pelajeyraza_femenino);
+                            mp.start();
+                        }
                     }
                 });
             }

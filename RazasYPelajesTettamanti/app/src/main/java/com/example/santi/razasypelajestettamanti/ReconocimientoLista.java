@@ -1,8 +1,10 @@
 package com.example.santi.razasypelajestettamanti;
 
 import android.app.Fragment;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,8 +53,12 @@ public abstract class ReconocimientoLista extends Fragment {
             final int index = i-1;
             audio.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    MediaPlayer mp = MediaPlayer.create(v.getContext(), caballos[index].audio_pelajeyraza_femenino);
-                    mp.start();
+                    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(v.getContext());
+                    boolean voz_femenina = sp.getBoolean("switch_voz",false);
+                    if (voz_femenina){
+                        MediaPlayer mp = MediaPlayer.create(v.getContext(), caballos[index].audio_pelajeyraza_femenino);
+                        mp.start();
+                    }
                 }
             });
 

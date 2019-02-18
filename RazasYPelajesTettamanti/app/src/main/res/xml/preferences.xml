@@ -60,11 +60,11 @@
             android:defaultValue="false"
             android:key="switch_voz"
             android:persistent="true"
-            android:summary="Desactivado - Femenina / Activado - Masculina"
-            android:summaryOff="Femenina"
-            android:summaryOn="Masculina"
-            android:switchTextOff="Femenina"
-            android:switchTextOn="Masculina"
+            android:summary="Desactivado - Masculina / Activado - Femenina"
+            android:summaryOff="Masculina"
+            android:summaryOn="Femenina"
+            android:switchTextOff="Masculina"
+            android:switchTextOn="Femenina"
             android:title="Seleccione tipo de voz" />
     </PreferenceCategory>
 </PreferenceScreen>

@@ -2,6 +2,7 @@ package com.example.santi.razasypelajestettamanti;
 
 import android.preference.ListPreference;
 import android.preference.MultiSelectListPreference;
+import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.os.Bundle;
 
@@ -36,6 +37,18 @@ public class PreferencesFragment extends PreferenceFragment {
             set.add("Razas y pelajes");
             modoReconocimiento.setValues(set);
         }
+
+        modoReconocimiento.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                Set<String> value = (Set<String>) newValue;
+                if (value.isEmpty()){
+                    return false;
+                }
+                return true;
+
+            }
+        });
     }
 
 

@@ -1,6 +1,8 @@
 package com.example.santi.razasypelajestettamanti;
 
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
+import android.preference.PreferenceManager;
 import android.support.constraint.ConstraintLayout;
 import android.view.View;
 import android.widget.ImageView;
@@ -27,15 +29,19 @@ public class RazasyPelajesImagenPalabra extends InteraccionMinijuego {
     protected void setContenidoAOpcion(View v, int indiceCaballos, int indiceOpcion){
         TextView texto = (TextView) v;
         texto.setText("");
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(v.getContext());
+        boolean voz_femenina = sp.getBoolean("switch_voz",false);
         if (firstActivity) {
             int eleccion = this.pelajeORaza();
             if (eleccion == 1) {
                 texto.append(caballos[indiceCaballos].pelaje);
-                setAudio(indiceOpcion,caballos[indiceCaballos].audio_pelaje_femenino);
+                if (voz_femenina)
+                    setAudio(indiceOpcion,caballos[indiceCaballos].audio_pelaje_femenino);
             }
             else {
                 texto.append(caballos[indiceCaballos].raza);
-                setAudio(indiceOpcion,caballos[indiceCaballos].audio_raza_femenino);
+                if (voz_femenina)
+                    setAudio(indiceOpcion,caballos[indiceCaballos].audio_raza_femenino);
             }
 
         }
@@ -43,7 +49,8 @@ public class RazasyPelajesImagenPalabra extends InteraccionMinijuego {
             texto.append(caballos[indiceCaballos].raza);
             texto.append(" y ");
             texto.append(caballos[indiceCaballos].pelaje);
-            setAudio(indiceOpcion,caballos[indiceCaballos].audio_pelajeyraza_femenino);
+            if (voz_femenina)
+                setAudio(indiceOpcion,caballos[indiceCaballos].audio_pelajeyraza_femenino);
         }
     }
 
