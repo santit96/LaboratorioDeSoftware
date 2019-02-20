@@ -18,14 +18,17 @@ public class CruzasImagenImagen extends InteraccionMinijuego {
         return Campeon.class;
     };
 
-    protected void setContenidoAOpcion(View v, int indiceCaballos, int indiceOpcion){
+    protected int setContenidoAOpcion(View v, int indiceCaballos, int indiceOpcion){
         ImageView image = (ImageView) v;
-        image.setBackgroundResource(((CaballoCruza) caballos[indiceCaballos]).imagen_madre);
+        image.setBackgroundResource(((CaballoCruza) caballos[indiceCaballos]).imagen);
+        return indiceCaballos;
     }
 
     protected void setIncognita(){
-        ImageView imagenCaballo = (ImageView) findViewById(R.id.imagenCaballo2);
-        imagenCaballo.setImageResource(caballoGanador.imagen);
+        ImageView imagenCaballoPadre = (ImageView) findViewById(R.id.imagenCaballoPadre);
+        imagenCaballoPadre.setImageResource(((CaballoCruza)caballoGanador).imagen_padre);
+        ImageView imagenCaballoMadre = (ImageView) findViewById(R.id.imagenCaballoMadre);
+        imagenCaballoMadre.setImageResource(((CaballoCruza)caballoGanador).imagen_madre);
     }
 
     protected void pantallaGanador() {

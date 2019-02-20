@@ -42,25 +42,31 @@ public abstract class ReconocimientoLista extends Fragment {
         ((TextView) listaReconocimiento.getChildAt(0)).setText(getTituloReconocimiento());
         for (int i = 1; i < listaReconocimiento.getChildCount(); i++) {
             LinearLayout infoCaballo = (LinearLayout) listaReconocimiento.getChildAt(i);
-            ImageView imagenCaballo = (ImageView) infoCaballo.getChildAt(0);
-            imagenCaballo.setImageResource(caballos[i-1].imagen);
-            LinearLayout textoYAudio = (LinearLayout) infoCaballo.getChildAt(1);
-            TextView pelajeYRaza = (TextView) textoYAudio.getChildAt(0);
-            pelajeYRaza.setText(caballos[i-1].raza);
-            pelajeYRaza.append(" y ");
-            pelajeYRaza.append(caballos[i-1].pelaje);
-            ImageView audio = (ImageView) textoYAudio.getChildAt(1);
-            final int index = i-1;
-            audio.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(v.getContext());
-                    boolean voz_femenina = sp.getBoolean("switch_voz",false);
-                    if (voz_femenina){
-                        MediaPlayer mp = MediaPlayer.create(v.getContext(), caballos[index].audio_pelajeyraza_femenino);
-                        mp.start();
+            if (i <= caballos.length) {
+                ImageView imagenCaballo = (ImageView) infoCaballo.getChildAt(0);
+                imagenCaballo.setImageResource(caballos[i - 1].imagen);
+                LinearLayout textoYAudio = (LinearLayout) infoCaballo.getChildAt(1);
+                TextView pelajeYRaza = (TextView) textoYAudio.getChildAt(0);
+                pelajeYRaza.setText(caballos[i - 1].raza);
+                pelajeYRaza.append(" y ");
+                pelajeYRaza.append(caballos[i - 1].pelaje);
+                ImageView audio = (ImageView) textoYAudio.getChildAt(1);
+                final int index = i - 1;
+                audio.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(v.getContext());
+                        boolean voz_femenina = sp.getBoolean("switch_voz", false);
+                        if (voz_femenina) {
+                            MediaPlayer mp = MediaPlayer.create(v.getContext(), caballos[index].audio_pelajeyraza_femenino);
+                            mp.start();
+                        }
                     }
-                }
-            });
+                });
+            }
+            else
+            {
+             infoCaballo.setVisibility(View.GONE);
+            }
 
         }
     }

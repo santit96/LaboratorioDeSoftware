@@ -26,11 +26,16 @@ public class RazasyPelajesImagenPalabra extends InteraccionMinijuego {
             return CruzasImagenImagen.class;
     }
 
-    protected void setContenidoAOpcion(View v, int indiceCaballos, int indiceOpcion){
+    protected int setContenidoAOpcion(View v, int indiceCaballos, int indiceOpcion){
         TextView texto = (TextView) v;
         texto.setText("");
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(v.getContext());
         boolean voz_femenina = sp.getBoolean("switch_voz",false);
+        while ((caballos[indiceCaballos].raza.equals(caballoGanador.raza) || caballos[indiceCaballos].pelaje.equals(caballoGanador.pelaje)) && indiceOpcion!=posicionGanadora){
+            indiceCaballos++;
+            if (indiceCaballos== caballos.length)
+                indiceCaballos=0;
+        }
         if (firstActivity) {
             int eleccion = this.pelajeORaza();
             if (eleccion == 1) {
@@ -56,6 +61,7 @@ public class RazasyPelajesImagenPalabra extends InteraccionMinijuego {
             if (voz_femenina)
                 setAudio(indiceOpcion,caballos[indiceCaballos].audio_pelajeyraza_femenino);
         }
+        return indiceCaballos;
     }
 
     private void setAudio(int indiceOpcion, int audioId){

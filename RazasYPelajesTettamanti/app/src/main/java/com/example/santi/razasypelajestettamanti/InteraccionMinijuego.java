@@ -23,6 +23,7 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
 
     protected int rondasJugadas = 0;
     protected int rondasGanadas = 0;
+    int posicionGanadora = 0;
 
     protected Caballo[] caballos;
     protected Caballo caballoGanador;
@@ -55,7 +56,7 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
 
     protected abstract void setIncognita();
 
-    protected abstract void setContenidoAOpcion(View v, int indiceCaballo, int indiceOpcion);
+    protected abstract int setContenidoAOpcion(View v, int indiceCaballo, int indiceOpcion);
 
 
     protected void nuevaRonda() {
@@ -90,20 +91,19 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
         int indiceCaballos = rand.nextInt(caballos.length);
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         boolean dificil = sp.getBoolean("switch_nivel",false);
-        int posicionGanadora;
         if (dificil)
             posicionGanadora = rand.nextInt(4);
         else
             posicionGanadora = rand.nextInt(2)+1;
         for (int i=0; i<opciones.getChildCount(); i++){
             View opcion =  this.getOpcionesChild(opciones,i);
-            if (indiceCaballos == caballos.length)
+            if (indiceCaballos >= caballos.length)
                 indiceCaballos = 0;
             if (i == posicionGanadora) {
                 caballoGanador = caballos[indiceCaballos];
                 idGanador = opcion.getId();
             }
-            this.setContenidoAOpcion(opcion,indiceCaballos,i);
+            indiceCaballos = this.setContenidoAOpcion(opcion,indiceCaballos,i);
             indiceCaballos++;
         }
         if (!dificil){
@@ -130,11 +130,11 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
     }
 
     private void setResultado(View v){
-        LinearLayout resultado = (LinearLayout) findViewById(R.id.layout_resultado);
+        LinearLayout resultado = findViewById(R.id.layout_resultado);
         resultado.setVisibility(View.VISIBLE);
-        TextView texto_resultado = (TextView) findViewById(R.id.resultado);
+        TextView texto_resultado = findViewById(R.id.resultado);
         texto_resultado.setText("");
-        ImageView image_resultado = (ImageView) findViewById(R.id.imagen_resultado);
+        ImageView image_resultado =  findViewById(R.id.imagen_resultado);
         MediaPlayer mp;
         if (v.getId() == idGanador) {
             rondasGanadas++;

@@ -24,9 +24,15 @@ public class RazasyPelajesPalabraImagen extends InteraccionMinijuego {
             return CruzasImagenImagen.class;
     };
 
-    protected void setContenidoAOpcion(View v, int indiceCaballos, int indiceOpcion){
+    protected int setContenidoAOpcion(View v, int indiceCaballos, int indiceOpcion){
         ImageView image = (ImageView) v;
+        while ((caballos[indiceCaballos].raza.equals(caballoGanador.raza) || caballos[indiceCaballos].pelaje.equals(caballoGanador.pelaje)) && indiceOpcion!=posicionGanadora){
+            indiceCaballos++;
+            if (indiceCaballos== caballos.length)
+                indiceCaballos=0;
+        }
         image.setBackgroundResource(caballos[indiceCaballos].imagen);
+        return indiceCaballos;
     }
 
 

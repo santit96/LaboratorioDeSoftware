@@ -16,9 +16,9 @@ public class Caballos {
     private int[] imagenes_padres = new int[]{R.drawable.imagen6,R.drawable.imagen4,R.drawable.imagen2,R.drawable.imagen1,R.drawable.imagen3,R.drawable.imagen5};
     private int[] imagenes_madres = new int[]{R.drawable.imagen6,R.drawable.imagen4,R.drawable.imagen2,R.drawable.imagen1,R.drawable.imagen3,R.drawable.imagen5};
 
-    private int[] imagenes_caballos = new int[]{R.drawable.imagen6,R.drawable.imagen4,R.drawable.imagen2,R.drawable.imagen1,R.drawable.imagen3,R.drawable.imagen5};
-    private int[] imagenes2 = new int[]{R.drawable.caballo_amapola_petisoargentino_rosillo,R.drawable.caballo_ambar_mestizocruzaarabe_alazantostado, R.drawable.caballo_antu_mestizo_overozaino,R.drawable.caballo_hualfin_criollo_horsepicaso,R.drawable.caballo_juana_cuartodemilla_bayo,R.drawable.caballo_primavera_sillaargentino_alazan};
-    //        R.drawable.caballo_amapola_petisoargentino_rosillo, R.drawable.caballo_ambar_mestizocruzaarabe_alazantostado,R.drawable.caballo_angola_spc_zainocolorado,
+    private int[] imagenes_caballos = new int[]{R.drawable.imagen6,R.drawable.imagen4,R.drawable.imagen2,R.drawable.imagen1,R.drawable.imagen7,R.drawable.imagen5,R.drawable.imagen3};
+    private int[] imagenes2 = new int[]{R.drawable.caballo_amapola_petisoargentino_rosillo,R.drawable.caballo_ambar_mestizocruzaarabe_alazantostado, R.drawable.caballo_antu_mestizo_overozaino,R.drawable.caballo_hualfin_criollo_horsepicaso,R.drawable.caballo_juana_cuartodemilla_bayo,R.drawable.caballo_primavera_sillaargentino_alazan,R.drawable.caballo_angola_spc_zainocolorado};
+    //        R.drawable.caballo_amapola_petisoargentino_rosillo, R.drawable.caballo_ambar_mestizocruzaarabe_alazantostado,
     //        R.drawable.caballo_antu_mestizo_overozaino,R.drawable.caballo_bionda_mestizo_alazanruano,R.drawable.caballo_blanco_mestizo_blanco,
     //        R.drawable.caballo_bonita_mestizoqhconcriollo_overoazulejo,R.drawable.caballo_cacique_mestizo_alazan,R.drawable.caballo_candelaria_mestizo_tobiano,
     //        R.drawable.caballo_ciro_mestizo_tordillocanela,R.drawable.caballo_felipe_mestizo_zaino,R.drawable.caballo_hualfin_criollo_horsepicaso,
@@ -54,7 +54,7 @@ public class Caballos {
     }
 
     private CaballoCruza[] crearCruzas(){
-        CaballoCruza[] cruzas_array = new CaballoCruza[imagenes_caballos.length];
+        CaballoCruza[] cruzas_array = new CaballoCruza[imagenes_cruzas.length];
         for (int i = 0; i< imagenes_cruzas.length; i++){
             CaballoCruza cruza = new CaballoCruza();
 

@@ -18,6 +18,7 @@
         <item>Picaso</item>
         <item>Bayo</item>
         <item>Alazan</item>
+        <item>Zaino Colorado</item>
     </string-array>
 
     <string-array name="pelajes_cruza">
@@ -36,6 +37,7 @@
         <item>Criollo</item>
         <item>Cuarto de milla</item>
         <item>Silla argentino</item>
+        <item>Pura Sangre</item>
     </string-array>
 
     <string-array name="razas_cruza">
