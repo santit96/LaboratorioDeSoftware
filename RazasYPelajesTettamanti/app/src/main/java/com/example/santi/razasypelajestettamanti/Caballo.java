@@ -11,5 +11,6 @@ public class Caballo {
     public int audio_pelaje_masculino;
     public int audio_pelajeyraza_femenino;
     public int audio_pelajeyraza_masculino;
+    public String texto_desriptivo;
 
 }

@@ -22,10 +22,10 @@
     </string-array>
 
     <string-array name="pelajes_cruza">
-        <item>Gateado</item>
         <item>Zaino Colorado</item>
+        <item>Zaino</item>
         <item>Pintado</item>
-        <item>Gateado Rosillo</item>
+        <item>Alazán</item>
         <item>Alazan</item>
         <item>Tobiano</item>
     </string-array>
@@ -41,12 +41,129 @@
     </string-array>
 
     <string-array name="razas_cruza">
-        <item>Mestizo Apaloosa</item>
-        <item>Mestizo Apaloosa</item>
-        <item>Mestizo Apaloosa</item>
-        <item>Mestizo Silla Argentino</item>
         <item>Mestizo</item>
         <item>Mestizo</item>
+        <item>Apaloosa</item>
+        <item>Silla Argentino</item>
+        <item>Cuarto de Milla</item>
+        <item>Petizo Argentino</item>
+    </string-array>
+
+    <string-array name="texto_descriptivo">
+        <item>AMAPOLA.
+RAZA: PETISO ARGENTINO.
+Raza de Caballos que nació de la cruza de petisos importados con caballos de otras razas, principalmente autóctonas. De cabeza mediana, orejas pequeñas, cuerpo armonioso y profundo; de acción ágil y suelta, temperamento activo y brioso.En la actualidad, se usa para actividades hípicas con niños y niñas .
+
+PELAJE: ROSILLO.
+Formado por una capa de pelos rojizos y blancos entremezclados, generalmente, sobre piel clara.
+Puede ser: Rosillo Blanco – Rosillo Claro – Rosillo Colorado.
+</item>
+        <item>MESTIZO CRUZA ÁRABE.
+Resultante de un progenitor MESTIZO y uno ÁRABE.
+
+RAZA MESTIZO - Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia.
+
+RAZA ÁRABE - Raza de Caballos con una cabeza característica y la cola siempre en alto. El caballo árabe es una de las razas de caballos mejor reconocidas en el mundo. Su reputación denota su inteligencia, carácter fuerte y resistencia sobresaliente. Tienen menos huesos ya que tienen una costilla, un hueso lumbar y dos vértebras menos que los demás caballos.
+Su pelaje puede tener varias tonalidades. Encontramos caballos árabes en prácticamente todos los colores, aunque los más característicos o arraigados a este tipo de raza sean los Tordillos y Alazanes.
+        PELAJE: ALAZÁN TOSTADO.
+Capa color anaranjado parejo y uniforme, que va del amarillento al colorado azafrán. Su piel es oscura. Las crines, cerdas y miembros son del mismo color o más claros, pero nunca oscuro, pero nunca negras.
+Pueden ser: Alazán – Alazán Claro – Alazán Rubio – Alazán Dorado – Alazán Tostado.
+</item>
+        <item>ANTÚ.
+RAZA: MESTIZO.
+Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia.
+
+PELAJE: OVERO ZAINO.
+Capa pigmentada con manchas blancas características por sus bordes irregulares e indefinidos. Se da tanto en una capa pigmentada con manchas blancas o al revés. La parte inferior del cuerpo suele tener más presencia de blanco que la parte superior.
+Pueden ser: Overo Alazán – Overo Azulejo – Overo Moro – Overo Rosado – Overo  Zaino.
+</item>
+        <item>HUALFÍN.
+RAZA: MESTIZO.
+Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia.
+
+PELAJE: PICAZO.
+Se caracteriza por capa oscura con frente y extremidades blancas.
+</item>
+        <item>JUANA.
+RAZA: CUARTO DE MILLA.
+Raza de Caballos conformada por la cruza de Pura Sangre Inglés y Mustang americano. De carácter tranquilo; es muy sensible y sociable. Veloces, dúctiles, de poca estatura y corpulentos: constitución musculosa, pecho grande y ancho.
+Muy amplia es la gama de pelaje, sólo no se aceptan los Pintados, los Manchados (Appaloosa) ni los Albinos.
+
+PELAJE: BAYO.
+El color de la capa abarca una amplia gama cromática que puede ir del amarillo muy claro casi blanco hasta el marrón claro anaranjado. Este pelaje suele presentar particularidades blancas o cabos negros.
+Pueden ser: Bayo – Bayo Claro – Bayo Anaranjado – Bayo Encerado.
+</item>
+        <item>PRIMAVERA.
+RAZA: SILLA ARGENTINO.
+Raza de Caballo cuyo orígen se remonta a 1941 cuando  el Anglo Argentino se transformó en raza para la AAFE (Asociación Argentina de Fomento Equino). A partir de 1982 comenzó a llamarse Silla Argentino. Es una animal muy parecido al SPC, aunque más robustos. Se destaca por su temperamento enérgico y vivaz. De volumen y peso medianos, su estructura fuerte y proporcionada le otorga una armonía apta para el deporte.
+Su pelaje, notablemente liso y sedoso, puede ser Alazán, Zaino o Tordillo pero no Pintado o Tobiano.
+
+PELAJE: ALAZÁN.
+Capa color anaranjado parejo y uniforme, que va del amarillento al colorado azafrán. Su piel es oscura. Las crines, cerdas y miembros son del mismo color o más claros, pero nunca oscuro, pero nunca negras.
+Pueden ser: Alazán – Alazán Claro – Alazán Rubio – Alazán Dorado – Alazán Tostado.
+</item>
+        <item>ANGOLA.
+RAZA: SANGRE PURO DE CARRERA.
+Raza de Caballos con orígen el siglo XVIII en Inglaterra cuando yeguas madres inglesas fueron cruzadas con sementales árabes importados para crear corredores de distancia. Los pura sangre se destacan como caballos de carrera pero también se utilizan como caballos de equitación y otros entrenamientos ecuestres combinados, debido a su gran  condición atlética.
+El color de capa más común es el castaño pero también puede ser Zaino, Alazán o Tordillo en cuanto a su pelaje.
+
+PELAJE: ZAINO COLORADO.
+La capa tiene un color fundamentalmente marrón, variables de un rojo al negro.
+Pueden ser: Zaino – Zaino Colorado – Zaino Doradillo – Zaino Oscuro.
+</item>
+    </string-array>
+
+    <string-array name="texto_descriptivo_cruzas">
+        <item>BELLA - Madre BONITA y Padre APPALOOSA -
+RAZA: MESTIZO.
+Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia.
+
+PELAJE: ZAINO COLORADO.
+La capa tiene un color fundamentalmente marrón, variables de un rojo al negro.
+Pueden ser: Zaino – Zaino Colorado – Zaino Doradillo – Zaino Oscuro.
+</item>
+        <item>HUAYRA - Madre POCHA y Padre APPALOOSA -
+RAZA: MESTIZO.
+Cuando el resultado de la cruza entre dos caballos resulta en otro cuyas características no corresponden a ninguna raza pura conocida, se lo denomina CABALLO MESTIZO. Su pelaje depende mucho de las cruzas y los genes que tenga el caballo, por lo que podemos decir que la gama de colores y combinaciones con la que cuentan en su pelaje es verdaderamente muy amplia.
+
+PELAJE: ZAINO.
+La capa tiene un color fundamentalmente marrón, variables de un rojo al negro.
+Pueden ser: Zaino – Zaino Colorado – Zaino Doradillo – Zaino Oscuro.
+</item>
+        <item>MANCHA - Madre PINTADA y Padre APPALOOSA -
+RAZA: APPALOOSA.
+Raza de Caballos criados según las normas del Appaloosa Horse Club para preservar los caballos de la Tribu Nez Perce casi extintos. Caracterizado por su piel moteada, su esclerótica ocular blanca -y mucho más visible que en otras razas- y sus cascos rayados bien definidos, son animales buen carácter y personalidad activa.
+Su nombre deriva de su aspecto característico en  su pelaje, también llamado “pecoso”. Pueden ser Nevado - Lavado - Leopardo - Mármol - Escarchado.
+
+PELAJE: PINTADO.
+Se caracteriza porque los pelos de diferentes colores que forman su capa se agrupan formando manchas o parches.
+</item>
+        <item>NALITO - Madre NALA y Padre SILLA ARGENTINO -
+RAZA: SILLA ARGENTINO.
+Raza de Caballo cuyo orígen se remonta a 1941 cuando  el Anglo Argentino se transformó en raza para la AAFE (Asociación Argentina de Fomento Equino). A partir de 1982 comenzó a llamarse Silla Argentino. Es una animal muy parecido al SPC, aunque más robustos. Se destaca por su temperamento enérgico y vivaz. De volumen y peso medianos, su estructura fuerte y proporcionada le otorga una armonía apta para el deporte.
+Su pelaje, notablemente liso y sedoso, puede ser Alazán, Zaino o Tordillo pero no Pintado o Tobiano.
+
+PELAJE: ALAZÁN.
+Capa color anaranjado parejo y uniforme, que va del amarillento al colorado azafrán. Su piel es oscura. Las crines, cerdas y miembros son del mismo color o más claros, pero nunca oscuro, pero nunca negras.
+Pueden ser: Alazán – Alazán Claro – Alazán Rubio – Alazán Dorado – Alazán Tostado
+</item>
+        <item> ORITA - Madre PETRA y Padre ALAZÁN TOSTADO -
+RAZA: CUARTO DE MILLA.
+Raza de Caballos conformada por la cruza de Pura Sangre Inglés y Mustang americano. De carácter tranquilo; es muy sensible y sociable. Veloces, dúctiles, de poca estatura y corpulentos: constitución musculosa, pecho grande y ancho.
+Muy amplia es la gama de pelaje, sólo no se aceptan los Pintados, los Manchados (Appaloosa) ni los Albinos.
+
+PELAJE: ALAZÁN.
+Capa color anaranjado parejo y uniforme, que va del amarillento al colorado azafrán. Su piel es oscura. Las crines, cerdas y miembros son del mismo color o más claros, pero nunca oscuro, pero nunca negras.
+Pueden ser: Alazán – Alazán Claro – Alazán Rubio – Alazán Dorado – Alazán Tostado.
+</item>
+        <item>PIRATA - Madre KIKA y Padre TOBIANO -
+RAZA: PETISO ARGENTINO.
+Raza de Caballos que nació de la cruza de petisos importados con caballos de otras razas, principalmente autóctonas. De cabeza mediana, orejas pequeñas, cuerpo armonioso y profundo; de acción ágil y suelta, temperamento activo y brioso.En la actualidad, se usa para actividades hípicas con niños y niñas.
+
+PELAJE: TOBIANO.
+Capa caracterizada por manchas de bordes definidos blancas –grandes o pequeñas- que, generalmente, se inician sobre la parte dorsal.
+Pueden ser: Tobiano Colorado – Tobiano Negro.
+</item>
     </string-array>
 
     <!-- do not remove -->

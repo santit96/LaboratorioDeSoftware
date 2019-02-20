@@ -51,15 +51,21 @@ public abstract class ReconocimientoLista extends Fragment {
                 pelajeYRaza.append(" y ");
                 pelajeYRaza.append(caballos[i - 1].pelaje);
                 ImageView audio = (ImageView) textoYAudio.getChildAt(1);
+                TextView texto_descriptivo = (TextView) infoCaballo.getChildAt(2);
+                texto_descriptivo.setText(caballos[i - 1].texto_desriptivo);
                 final int index = i - 1;
                 audio.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(v.getContext());
                         boolean voz_femenina = sp.getBoolean("switch_voz", false);
+                        MediaPlayer mp;
                         if (voz_femenina) {
-                            MediaPlayer mp = MediaPlayer.create(v.getContext(), caballos[index].audio_pelajeyraza_femenino);
-                            mp.start();
+                            mp = MediaPlayer.create(v.getContext(), caballos[index].audio_pelajeyraza_femenino);
                         }
+                        else{
+                            mp = MediaPlayer.create(v.getContext(), caballos[index].audio_raza_masculino);
+                        }
+                        mp.start();
                     }
                 });
             }

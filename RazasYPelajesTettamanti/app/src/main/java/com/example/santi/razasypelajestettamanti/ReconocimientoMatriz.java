@@ -58,10 +58,15 @@ public abstract class ReconocimientoMatriz extends Fragment {
                         public void onClick(View v) {
                             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(v.getContext());
                             boolean voz_femenina = sp.getBoolean("switch_voz", false);
+                            MediaPlayer mp;
                             if (voz_femenina) {
-                                MediaPlayer mp = MediaPlayer.create(v.getContext(), caballos[indice].audio_pelajeyraza_femenino);
-                                mp.start();
+                               mp = MediaPlayer.create(v.getContext(), caballos[indice].audio_pelajeyraza_femenino);
                             }
+                            else{
+                               mp = MediaPlayer.create(v.getContext(), caballos[indice].audio_raza_masculino);
+                            }
+                            mp.start();
+
                         }
                     });
                 }

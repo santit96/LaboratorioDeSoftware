@@ -40,6 +40,7 @@ public class Caballos {
             caballo.imagen = imagenes_caballos[i];
             caballo.raza = context.getResources().getStringArray(R.array.razas)[i];
             caballo.pelaje = context.getResources().getStringArray(R.array.pelajes)[i];
+            caballo.texto_desriptivo = context.getResources().getStringArray(R.array.texto_descriptivo)[i];
             //audios femeninos
             caballo.audio_pelaje_femenino = context.getResources().getIdentifier("voz_femenina_pelaje_"+(i+1), "raw",context.getPackageName());
             caballo.audio_raza_femenino = context.getResources().getIdentifier("voz_femenina_raza_"+(i+1), "raw",context.getPackageName());
@@ -64,13 +65,11 @@ public class Caballos {
 
             cruza.raza = context.getResources().getStringArray(R.array.razas_cruza)[i];
             cruza.pelaje = context.getResources().getStringArray(R.array.pelajes_cruza)[i];
+            cruza.texto_desriptivo = context.getResources().getStringArray(R.array.texto_descriptivo_cruzas)[i];
             //audios femeninos
-            cruza.audio_pelaje_femenino = context.getResources().getIdentifier("voz_femenina_pelaje_"+(i+1), "raw",context.getPackageName());
-            cruza.audio_raza_femenino = context.getResources().getIdentifier("voz_femenina_raza_"+(i+1), "raw",context.getPackageName());
-            cruza.audio_pelajeyraza_femenino = context.getResources().getIdentifier("voz_femenina_razaypelaje_"+(i+1), "raw",context.getPackageName());
+            cruza.audio_pelajeyraza_femenino = context.getResources().getIdentifier("voz_femenina_raza_cruza_"+(i+1), "raw",context.getPackageName());
             //audios masculinos
-            cruza.audio_pelaje_masculino = context.getResources().getIdentifier("voz_masculina_pelaje_"+(i+1), "raw",context.getPackageName());
-            cruza.audio_raza_masculino = context.getResources().getIdentifier("voz_masculina_raza_"+(i+1), "raw",context.getPackageName());
+            cruza.audio_raza_masculino = context.getResources().getIdentifier("voz_masculina_raza_cruza_"+(i+1), "raw",context.getPackageName());
 
             cruzas_array[i] = cruza;
         }
