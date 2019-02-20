@@ -1,36 +1,79 @@
 package com.example.santi.razasypelajestettamanti;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
-
-import java.lang.reflect.Array;
 
 public class Caballos {
 
     public final Caballo[] caballos;
+    public final CaballoCruza[] cruzas;
 
     private Context context;
 
-    private int[] imagenes = new int[]{R.drawable.imagen1,R.drawable.imagen2,R.drawable.imagen4,R.drawable.imagen3};
-   // private int[] imagenes = new int[]{R.drawable.juana_cuartodemilla_bayo,R.drawable.hualfin_criollo_horsepicaso,R.drawable.bionda_cruzaarabe_alazanruano,R.drawable.imagen3};
+    //private int[] imagenes_cruzas = new int[]{R.drawable.cruza_bella,R.drawable.cruza_huayra,R.drawable.cruza_mancha,R.drawable.cruza_nalito,R.drawable.cruza_orita,R.drawable.cruza_pirata};
+    //private int[] imagenes_padres = new int[]{R.drawable.cruza_apapaloosa_generico_pixelado_padrebella,R.drawable.cruza_apapaloosa_generico_pixelado_padrehuayra,R.drawable.cruza_apapaloosa_generico_pixelado_padremancha,R.drawable.cruza_sillaargentino_padre_nalito,R.drawable.cruza_alazantostado_padreorita,R.drawable.cruza_tobiano_padrepirata};
+    //private int[] imagenes_madres = new int[]{R.drawable.cruza_bonita_madrebella,R.drawable.cruza_pocha_madrehuayra,R.drawable.cruza_pintada_madremancha,R.drawable.cruza_nala_madrenalito,R.drawable.cruza_petra_madreorita,R.drawable.cruza_kika_madrepirata};
+    private int[] imagenes_cruzas = new int[]{R.drawable.imagen6,R.drawable.imagen4,R.drawable.imagen2,R.drawable.imagen1,R.drawable.imagen3,R.drawable.imagen5};
+    private int[] imagenes_padres = new int[]{R.drawable.imagen6,R.drawable.imagen4,R.drawable.imagen2,R.drawable.imagen1,R.drawable.imagen3,R.drawable.imagen5};
+    private int[] imagenes_madres = new int[]{R.drawable.imagen6,R.drawable.imagen4,R.drawable.imagen2,R.drawable.imagen1,R.drawable.imagen3,R.drawable.imagen5};
+
+    private int[] imagenes_caballos = new int[]{R.drawable.imagen6,R.drawable.imagen4,R.drawable.imagen2,R.drawable.imagen1,R.drawable.imagen3,R.drawable.imagen5};
+    private int[] imagenes2 = new int[]{R.drawable.caballo_amapola_petisoargentino_rosillo,R.drawable.caballo_ambar_mestizocruzaarabe_alazantostado, R.drawable.caballo_antu_mestizo_overozaino,R.drawable.caballo_hualfin_criollo_horsepicaso,R.drawable.caballo_juana_cuartodemilla_bayo,R.drawable.caballo_primavera_sillaargentino_alazan};
+    //        R.drawable.caballo_amapola_petisoargentino_rosillo, R.drawable.caballo_ambar_mestizocruzaarabe_alazantostado,R.drawable.caballo_angola_spc_zainocolorado,
+    //        R.drawable.caballo_antu_mestizo_overozaino,R.drawable.caballo_bionda_mestizo_alazanruano,R.drawable.caballo_blanco_mestizo_blanco,
+    //        R.drawable.caballo_bonita_mestizoqhconcriollo_overoazulejo,R.drawable.caballo_cacique_mestizo_alazan,R.drawable.caballo_candelaria_mestizo_tobiano,
+    //        R.drawable.caballo_ciro_mestizo_tordillocanela,R.drawable.caballo_felipe_mestizo_zaino,R.drawable.caballo_hualfin_criollo_horsepicaso,
+    //        R.drawable.caballo_juana_cuartodemilla_bayo,R.drawable.caballo_mora_petisoargentino_tordillomoro,R.drawable.caballo_munieco_mestizo_overorosado,
+    //       R.drawable.caballo_nala_mestizo_moro,R.drawable.caballo_pamperito_petisoargentino_zaino,R.drawable.caballo_pintada_mestizo_alazanpintado,
+    //       R.drawable.caballo_pochito_mestizo_zaino,R.drawable.caballo_primavera_sillaargentino_alazan,R.drawable.caballo_tigre_criollo_bayogateado,
+    //        R.drawable.caballo_tupac_mestizo_zainooscuro,R.drawable.caballo_zorzal_mestizo_tordillo};
 
     Caballos (Context context){
         this.context = context;
         this.caballos = crearCaballos();
+        this.cruzas = crearCruzas();
     }
 
     private Caballo[] crearCaballos(){
-        Caballo[] caballos_array = new Caballo[imagenes.length];
-        for (int i=0; i<imagenes.length; i++){
+        Caballo[] caballos_array = new Caballo[imagenes_caballos.length];
+        for (int i = 0; i< imagenes_caballos.length; i++){
             Caballo caballo = new Caballo();
-            caballo.imagen = imagenes[i];
+            caballo.imagen = imagenes_caballos[i];
             caballo.raza = context.getResources().getStringArray(R.array.razas)[i];
+            caballo.pelaje = context.getResources().getStringArray(R.array.pelajes)[i];
+            //audios femeninos
             caballo.audio_pelaje_femenino = context.getResources().getIdentifier("voz_femenina_pelaje_"+(i+1), "raw",context.getPackageName());
             caballo.audio_raza_femenino = context.getResources().getIdentifier("voz_femenina_raza_"+(i+1), "raw",context.getPackageName());
             caballo.audio_pelajeyraza_femenino = context.getResources().getIdentifier("voz_femenina_razaypelaje_"+(i+1), "raw",context.getPackageName());
-            caballo.pelaje = context.getResources().getStringArray(R.array.pelajes)[i];
+            //audios masculinos
+            caballo.audio_pelaje_masculino = context.getResources().getIdentifier("voz_masculina_pelaje_"+(i+1), "raw",context.getPackageName());
+            caballo.audio_raza_masculino = context.getResources().getIdentifier("voz_masculina_raza_"+(i+1), "raw",context.getPackageName());
+
             caballos_array[i] = caballo;
         }
         return caballos_array;
+    }
+
+    private CaballoCruza[] crearCruzas(){
+        CaballoCruza[] cruzas_array = new CaballoCruza[imagenes_caballos.length];
+        for (int i = 0; i< imagenes_cruzas.length; i++){
+            CaballoCruza cruza = new CaballoCruza();
+
+            cruza.imagen = imagenes_cruzas[i];
+            cruza.imagen_madre = imagenes_madres[i];
+            cruza.imagen_padre = imagenes_padres[i];
+
+            cruza.raza = context.getResources().getStringArray(R.array.razas_cruza)[i];
+            cruza.pelaje = context.getResources().getStringArray(R.array.pelajes_cruza)[i];
+            //audios femeninos
+            cruza.audio_pelaje_femenino = context.getResources().getIdentifier("voz_femenina_pelaje_"+(i+1), "raw",context.getPackageName());
+            cruza.audio_raza_femenino = context.getResources().getIdentifier("voz_femenina_raza_"+(i+1), "raw",context.getPackageName());
+            cruza.audio_pelajeyraza_femenino = context.getResources().getIdentifier("voz_femenina_razaypelaje_"+(i+1), "raw",context.getPackageName());
+            //audios masculinos
+            cruza.audio_pelaje_masculino = context.getResources().getIdentifier("voz_masculina_pelaje_"+(i+1), "raw",context.getPackageName());
+            cruza.audio_raza_masculino = context.getResources().getIdentifier("voz_masculina_raza_"+(i+1), "raw",context.getPackageName());
+
+            cruzas_array[i] = cruza;
+        }
+        return cruzas_array;
     }
 }

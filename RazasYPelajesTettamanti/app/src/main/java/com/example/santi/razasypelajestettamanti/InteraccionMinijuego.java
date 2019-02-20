@@ -41,8 +41,12 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
         if(b != null)
             firstActivity = b.getBoolean("firstActivity");
 
-        caballos = new Caballos(getBaseContext()).caballos;
+        caballos = this.getCaballos();
         this.nuevaRonda();
+    }
+
+    protected Caballo[] getCaballos(){
+        return new Caballos(getBaseContext()).caballos;
     }
 
     protected abstract ConstraintLayout setLayout();

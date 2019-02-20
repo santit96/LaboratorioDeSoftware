@@ -12,17 +12,39 @@
     <string name="text_campeon">Felicidades! Has ganado todos los minijuegos y te has coronado campeon</string>
 
     <string-array name="pelajes">
-        <item>Bayo</item>
+        <item>Rosillo</item>
+        <item>Alazan tostado</item>
+        <item>Overo zaino</item>
         <item>Picaso</item>
-        <item>Alazán Ruano</item>
-        <item>Zaino</item>
+        <item>Bayo</item>
+        <item>Alazan</item>
+    </string-array>
+
+    <string-array name="pelajes_cruza">
+        <item>Gateado</item>
+        <item>Zaino Colorado</item>
+        <item>Pintado</item>
+        <item>Gateado Rosillo</item>
+        <item>Alazan</item>
+        <item>Tobiano</item>
     </string-array>
 
     <string-array name="razas">
-        <item>Cuarto de Milla</item>
+        <item>Petiso Argentino</item>
+        <item>Mestizo cruza Arabe</item>
+        <item>Mestizo</item>
         <item>Criollo</item>
-        <item>Cruza Árabe</item>
-        <item>Pura Sangre</item>
+        <item>Cuarto de milla</item>
+        <item>Silla argentino</item>
+    </string-array>
+
+    <string-array name="razas_cruza">
+        <item>Mestizo Apaloosa</item>
+        <item>Mestizo Apaloosa</item>
+        <item>Mestizo Apaloosa</item>
+        <item>Mestizo Silla Argentino</item>
+        <item>Mestizo</item>
+        <item>Mestizo</item>
     </string-array>
 
     <!-- do not remove -->
