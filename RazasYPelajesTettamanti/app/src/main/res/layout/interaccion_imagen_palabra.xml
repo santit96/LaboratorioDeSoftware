@@ -120,8 +120,8 @@
 
     <LinearLayout
         android:id="@+id/opciones"
-        android:layout_width="1086dp"
-        android:layout_height="wrap_content"
+        android:layout_width="1150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="104dp"
@@ -144,11 +144,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:text="TextView"
+                android:text="raza o pelaje\n+\nraza o pelaje"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="36sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -175,11 +175,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:text="TextView"
+                android:text="raza o pelaje\n+\nraza o pelaje"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="36sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -206,11 +206,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:text="TextView"
+                android:text="raza o pelaje\n+\nraza o pelaje"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="36sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -237,11 +237,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:text="TextView"
+                android:text="raza o pelaje\n+\nraza o pelaje"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="36sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <ImageView

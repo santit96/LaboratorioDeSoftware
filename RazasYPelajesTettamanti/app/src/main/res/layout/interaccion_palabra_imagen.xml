@@ -68,7 +68,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="600dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -88,18 +88,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Raza o pelaje"
+            android:gravity="center"
+            android:text="Raza o pelaje \n + \n raza o pelaje"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textColor="@android:color/background_light"
-            android:textSize="62sp"
+            android:textSize="45sp"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/voz"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="10dp"
+            android:layout_height="100dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:clickable="true"

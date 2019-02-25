@@ -56,7 +56,7 @@ public class RazasyPelajesImagenPalabra extends InteraccionMinijuego {
         }
         else{
             texto.append(caballos[indiceCaballos].raza);
-            texto.append(" y ");
+            texto.append("\n + \n");
             texto.append(caballos[indiceCaballos].pelaje);
             if (voz_femenina)
                 setAudio(indiceOpcion,caballos[indiceCaballos].audio_pelajeyraza_femenino);

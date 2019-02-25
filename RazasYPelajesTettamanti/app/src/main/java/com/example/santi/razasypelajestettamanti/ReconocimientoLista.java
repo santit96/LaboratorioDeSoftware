@@ -48,7 +48,7 @@ public abstract class ReconocimientoLista extends Fragment {
                 LinearLayout textoYAudio = (LinearLayout) infoCaballo.getChildAt(1);
                 TextView pelajeYRaza = (TextView) textoYAudio.getChildAt(0);
                 pelajeYRaza.setText(caballos[i - 1].raza);
-                pelajeYRaza.append(" y ");
+                pelajeYRaza.append("\n + \n");
                 pelajeYRaza.append(caballos[i - 1].pelaje);
                 ImageView audio = (ImageView) textoYAudio.getChildAt(1);
                 TextView texto_descriptivo = (TextView) infoCaballo.getChildAt(2);

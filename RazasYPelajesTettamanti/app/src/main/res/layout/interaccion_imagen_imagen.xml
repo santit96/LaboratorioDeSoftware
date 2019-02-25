@@ -119,8 +119,8 @@
         app:layout_constraintVertical_bias="0.023">
 
         <ImageView
-            android:id="@+id/imagenCaballoMadre"
-            android:layout_width="456dp"
+            android:id="@+id/imagenCaballoPadres"
+            android:layout_width="700dp"
             android:layout_height="336dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
@@ -134,20 +134,6 @@
             app:layout_constraintVertical_bias="0.025"
             app:srcCompat="@android:color/background_light" />
 
-        <ImageView
-            android:id="@+id/imagenCaballoPadre"
-            android:layout_width="456dp"
-            android:layout_height="336dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.025"
-            app:srcCompat="@android:color/background_light" />
     </LinearLayout>
 
     <LinearLayout

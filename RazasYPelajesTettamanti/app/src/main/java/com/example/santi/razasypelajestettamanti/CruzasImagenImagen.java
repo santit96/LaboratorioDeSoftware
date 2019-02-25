@@ -25,10 +25,8 @@ public class CruzasImagenImagen extends InteraccionMinijuego {
     }
 
     protected void setIncognita(){
-        ImageView imagenCaballoPadre = (ImageView) findViewById(R.id.imagenCaballoPadre);
-        imagenCaballoPadre.setImageResource(((CaballoCruza)caballoGanador).imagen_padre);
-        ImageView imagenCaballoMadre = (ImageView) findViewById(R.id.imagenCaballoMadre);
-        imagenCaballoMadre.setImageResource(((CaballoCruza)caballoGanador).imagen_madre);
+        ImageView imagenCaballoPadres = (ImageView) findViewById(R.id.imagenCaballoPadres);
+        imagenCaballoPadres.setImageResource(((CaballoCruza)caballoGanador).imagen_padres);
     }
 
     protected void pantallaGanador() {

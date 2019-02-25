@@ -9,23 +9,22 @@ public class Caballos {
 
     private Context context;
 
-    //private int[] imagenes_cruzas = new int[]{R.drawable.cruza_bella,R.drawable.cruza_huayra,R.drawable.cruza_mancha,R.drawable.cruza_nalito,R.drawable.cruza_orita,R.drawable.cruza_pirata};
-    //private int[] imagenes_padres = new int[]{R.drawable.cruza_apapaloosa_generico_pixelado_padrebella,R.drawable.cruza_apapaloosa_generico_pixelado_padrehuayra,R.drawable.cruza_apapaloosa_generico_pixelado_padremancha,R.drawable.cruza_sillaargentino_padre_nalito,R.drawable.cruza_alazantostado_padreorita,R.drawable.cruza_tobiano_padrepirata};
-    //private int[] imagenes_madres = new int[]{R.drawable.cruza_bonita_madrebella,R.drawable.cruza_pocha_madrehuayra,R.drawable.cruza_pintada_madremancha,R.drawable.cruza_nala_madrenalito,R.drawable.cruza_petra_madreorita,R.drawable.cruza_kika_madrepirata};
-    private int[] imagenes_cruzas = new int[]{R.drawable.imagen6,R.drawable.imagen4,R.drawable.imagen2,R.drawable.imagen1,R.drawable.imagen3,R.drawable.imagen5};
-    private int[] imagenes_padres = new int[]{R.drawable.imagen6,R.drawable.imagen4,R.drawable.imagen2,R.drawable.imagen1,R.drawable.imagen3,R.drawable.imagen5};
-    private int[] imagenes_madres = new int[]{R.drawable.imagen6,R.drawable.imagen4,R.drawable.imagen2,R.drawable.imagen1,R.drawable.imagen3,R.drawable.imagen5};
+    private int[] imagenes_cruzas = new int[]{R.drawable.cruza_bella,R.drawable.cruza_huayra,R.drawable.cruza_mancha,R.drawable.cruza_nalito,R.drawable.cruza_orita,R.drawable.cruza_pirata};
+    private int[] imagenes_padres = new int[]{R.drawable.cruza_bella_padres,R.drawable.cruza_huayra_padres,R.drawable.cruza_mancha_padres,R.drawable.cruza_nalito_padres,R.drawable.cruza_orita_padres,R.drawable.cruza_pirata_padres};
 
-    private int[] imagenes_caballos = new int[]{R.drawable.imagen6,R.drawable.imagen4,R.drawable.imagen2,R.drawable.imagen1,R.drawable.imagen7,R.drawable.imagen5,R.drawable.imagen3};
-    private int[] imagenes2 = new int[]{R.drawable.caballo_amapola_petisoargentino_rosillo,R.drawable.caballo_ambar_mestizocruzaarabe_alazantostado, R.drawable.caballo_antu_mestizo_overozaino,R.drawable.caballo_hualfin_criollo_horsepicaso,R.drawable.caballo_juana_cuartodemilla_bayo,R.drawable.caballo_primavera_sillaargentino_alazan,R.drawable.caballo_angola_spc_zainocolorado};
-    //        R.drawable.caballo_amapola_petisoargentino_rosillo, R.drawable.caballo_ambar_mestizocruzaarabe_alazantostado,
-    //        R.drawable.caballo_antu_mestizo_overozaino,R.drawable.caballo_bionda_mestizo_alazanruano,R.drawable.caballo_blanco_mestizo_blanco,
-    //        R.drawable.caballo_bonita_mestizoqhconcriollo_overoazulejo,R.drawable.caballo_cacique_mestizo_alazan,R.drawable.caballo_candelaria_mestizo_tobiano,
-    //        R.drawable.caballo_ciro_mestizo_tordillocanela,R.drawable.caballo_felipe_mestizo_zaino,R.drawable.caballo_hualfin_criollo_horsepicaso,
-    //        R.drawable.caballo_juana_cuartodemilla_bayo,R.drawable.caballo_mora_petisoargentino_tordillomoro,R.drawable.caballo_munieco_mestizo_overorosado,
-    //       R.drawable.caballo_nala_mestizo_moro,R.drawable.caballo_pamperito_petisoargentino_zaino,R.drawable.caballo_pintada_mestizo_alazanpintado,
-    //       R.drawable.caballo_pochito_mestizo_zaino,R.drawable.caballo_primavera_sillaargentino_alazan,R.drawable.caballo_tigre_criollo_bayogateado,
-    //        R.drawable.caballo_tupac_mestizo_zainooscuro,R.drawable.caballo_zorzal_mestizo_tordillo};
+    private int[] imagenes_caballos = new int[]{
+            R.drawable.caballo_amapola_petisoargentino_rosillo,R.drawable.caballo_ambar_mestizocruzaarabe_alazantostado,
+            R.drawable.caballo_antu_mestizo_overozaino,R.drawable.caballo_hualfin_criollo_horsepicaso,
+            R.drawable.caballo_juana_cuartodemilla_bayo,R.drawable.caballo_primavera_sillaargentino_alazan,
+            R.drawable.caballo_angola_spc_zainocolorado, R.drawable.caballo_bionda_mestizo_alazanruano,
+            R.drawable.caballo_blanco_mestizo_blanco, R.drawable.caballo_bonita_mestizoqhconcriollo_overoazulejo,
+            R.drawable.caballo_cacique_mestizo_alazan,R.drawable.caballo_candelaria_mestizo_tobiano,
+            R.drawable.caballo_ciro_mestizo_tordillocanela,R.drawable.caballo_felipe_mestizo_zaino,
+            R.drawable.caballo_mora_petisoargentino_tordillomoro,R.drawable.caballo_munieco_mestizo_overorosado,
+            R.drawable.caballo_nala_mestizo_moro,R.drawable.caballo_pamperito_petisoargentino_zaino,
+            R.drawable.caballo_pintada_mestizo_alazanpintado, R.drawable.caballo_pochito_mestizo_zaino,
+            R.drawable.caballo_tigre_criollo_bayogateado, R.drawable.caballo_tupac_mestizo_zainooscuro,
+            R.drawable.caballo_zorzal_mestizo_tordillo};
 
     Caballos (Context context){
         this.context = context;
@@ -60,8 +59,7 @@ public class Caballos {
             CaballoCruza cruza = new CaballoCruza();
 
             cruza.imagen = imagenes_cruzas[i];
-            cruza.imagen_madre = imagenes_madres[i];
-            cruza.imagen_padre = imagenes_padres[i];
+            cruza.imagen_padres = imagenes_padres[i];
 
             cruza.raza = context.getResources().getStringArray(R.array.razas_cruza)[i];
             cruza.pelaje = context.getResources().getStringArray(R.array.pelajes_cruza)[i];

@@ -51,7 +51,7 @@ public abstract class ReconocimientoMatriz extends Fragment {
                     imagenCaballo.setImageResource(caballos[indice].imagen);
                     TextView pelajeYRaza = (TextView) infoCaballo.getChildAt(1);
                     pelajeYRaza.setText(caballos[indice].raza);
-                    pelajeYRaza.append(" y ");
+                    pelajeYRaza.append("\n + \n");
                     pelajeYRaza.append(caballos[indice].pelaje);
                     ImageView audio = (ImageView) infoCaballo.getChildAt(2);
                     audio.setOnClickListener(new View.OnClickListener() {
