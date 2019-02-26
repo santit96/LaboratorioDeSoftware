@@ -63,6 +63,8 @@ public class RazasyPelajesPalabraImagen extends InteraccionMinijuego {
             pelajeORaza.append(caballoGanador.pelaje);
             if (voz_femenina)
                 this.setAudio(caballoGanador.audio_pelajeyraza_femenino);
+            else
+                this.setAudio(caballoGanador.audio_pelajeyraza_masculino);
         }
 
 

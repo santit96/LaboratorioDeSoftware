@@ -47,6 +47,7 @@ public class Caballos {
             //audios masculinos
             caballo.audio_pelaje_masculino = context.getResources().getIdentifier("voz_masculina_pelaje_"+(i+1), "raw",context.getPackageName());
             caballo.audio_raza_masculino = context.getResources().getIdentifier("voz_masculina_raza_"+(i+1), "raw",context.getPackageName());
+            caballo.audio_pelajeyraza_masculino = context.getResources().getIdentifier("voz_masculina_razaypelaje_"+(i+1), "raw",context.getPackageName());
 
             caballos_array[i] = caballo;
         }
