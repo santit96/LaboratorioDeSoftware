@@ -66,7 +66,7 @@
     <LinearLayout
         android:id="@+id/layout-resultado"
         android:layout_width="619dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -84,7 +84,7 @@
         <ImageView
             android:id="@+id/imagen-resultado"
             android:layout_width="1dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:background="@color/transparente"
             android:src="@drawable/check"
@@ -99,7 +99,7 @@
             android:gravity="center_vertical"
             android:text="Resultado"
             android:textAllCaps="false"
-            android:textSize="45sp"
+            android:textSize="40sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -120,11 +120,11 @@
 
     <LinearLayout
         android:id="@+id/opciones"
-        android:layout_width="1150dp"
-        android:layout_height="150dp"
+        android:layout_width="1200dp"
+        android:layout_height="170dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="84dp"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -132,7 +132,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="280dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -143,7 +143,9 @@
                 android:id="@+id/razaOPelaje1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/border"
                 android:clickable="true"
+                android:padding="5dp"
                 android:text="raza o pelaje\n+\nraza o pelaje"
                 android:textAlignment="center"
                 android:textAllCaps="false"
@@ -160,10 +162,11 @@
                 android:clickable="true"
                 android:focusable="true"
                 app:srcCompat="@drawable/audio_regular" />
+
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="280dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -174,7 +177,9 @@
                 android:id="@+id/razaOPelaje2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/border"
                 android:clickable="true"
+                android:padding="5dp"
                 android:text="raza o pelaje\n+\nraza o pelaje"
                 android:textAlignment="center"
                 android:textAllCaps="false"
@@ -191,10 +196,11 @@
                 android:clickable="true"
                 android:focusable="true"
                 app:srcCompat="@drawable/audio_regular" />
+
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="280dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -205,7 +211,9 @@
                 android:id="@+id/razaOPelaje3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/border"
                 android:clickable="true"
+                android:padding="5dp"
                 android:text="raza o pelaje\n+\nraza o pelaje"
                 android:textAlignment="center"
                 android:textAllCaps="false"
@@ -222,10 +230,11 @@
                 android:clickable="true"
                 android:focusable="true"
                 app:srcCompat="@drawable/audio_regular" />
+
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="280dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -236,7 +245,9 @@
                 android:id="@+id/razaOPelaje4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/border"
                 android:clickable="true"
+                android:padding="5dp"
                 android:text="raza o pelaje\n+\nraza o pelaje"
                 android:textAlignment="center"
                 android:textAllCaps="false"
@@ -255,4 +266,5 @@
                 app:srcCompat="@drawable/audio_regular" />
         </LinearLayout>
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

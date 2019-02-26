@@ -99,7 +99,7 @@
 
         <ImageView
             android:id="@+id/voz"
-            android:layout_width="10dp"
+            android:layout_width="1dp"
             android:layout_height="100dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"

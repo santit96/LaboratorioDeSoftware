@@ -50,7 +50,8 @@ public class Campeon extends AppCompatActivity {
     private void setTextoCampeon(){
         TextView texto_campeon = (TextView) findViewById(R.id.texto_campeon);
         texto_campeon.setText(getResources().getString(R.string.text_campeon));
-
+        TextView texto_campeon2 = (TextView) findViewById(R.id.texto_campeon2);
+        texto_campeon2.setText("CAMPEON");
     }
 
     private void setHomeBehaviour() {

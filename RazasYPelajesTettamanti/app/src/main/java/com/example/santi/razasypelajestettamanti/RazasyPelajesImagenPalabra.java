@@ -9,9 +9,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class RazasyPelajesImagenPalabra extends InteraccionMinijuego {
+
+    private List<String> pelajesEnuso = new ArrayList<>();
+    private List<String> razasEnuso = new ArrayList<>();
 
     private int pelajeORaza = -1;
 
@@ -31,7 +36,7 @@ public class RazasyPelajesImagenPalabra extends InteraccionMinijuego {
         texto.setText("");
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(v.getContext());
         boolean voz_femenina = sp.getBoolean("switch_voz",false);
-        while ((caballos[indiceCaballos].raza.equals(caballoGanador.raza) || caballos[indiceCaballos].pelaje.equals(caballoGanador.pelaje)) && indiceOpcion!=posicionGanadora){
+        while (this.razaOPelajeRepetido(indiceCaballos)){
             indiceCaballos++;
             if (indiceCaballos== caballos.length)
                 indiceCaballos=0;
@@ -63,7 +68,16 @@ public class RazasyPelajesImagenPalabra extends InteraccionMinijuego {
             else
                 setAudio(indiceOpcion,caballos[indiceCaballos].audio_pelajeyraza_masculino);
         }
+        razasEnuso.add(caballos[indiceCaballos].raza);
+        pelajesEnuso.add(caballos[indiceCaballos].pelaje);
         return indiceCaballos;
+    }
+
+    private boolean razaOPelajeRepetido(int indiceCaballos){
+        if (firstActivity)
+            return (razasEnuso.contains(caballos[indiceCaballos].raza) || pelajesEnuso.contains(caballos[indiceCaballos].pelaje));
+        else
+            return (razasEnuso.contains(caballos[indiceCaballos].raza) && pelajesEnuso.contains(caballos[indiceCaballos].pelaje));
     }
 
     private void setAudio(int indiceOpcion, int audioId){
@@ -95,6 +109,8 @@ public class RazasyPelajesImagenPalabra extends InteraccionMinijuego {
     protected void setIncognita(){
         ImageView imagenCaballo = (ImageView) findViewById(R.id.imagenCaballo);
         imagenCaballo.setImageResource(caballoGanador.imagen);
+        razasEnuso.clear();
+        pelajesEnuso.clear();
     }
 
 }

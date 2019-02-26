@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -68,15 +69,9 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
         }
         else{
             rondasJugadas++;
-            this.setCaballoGanador();
             this.updateRonda();
         }
 
-    }
-
-    protected void setCaballoGanador(){
-        Random rand = new Random();
-        caballoGanador = caballos[rand.nextInt(caballos.length)];
     }
 
     protected void updateRonda(){
@@ -99,11 +94,11 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
             View opcion =  this.getOpcionesChild(opciones,i);
             if (indiceCaballos >= caballos.length)
                 indiceCaballos = 0;
+            indiceCaballos = this.setContenidoAOpcion(opcion,indiceCaballos, i);
             if (i == posicionGanadora) {
                 caballoGanador = caballos[indiceCaballos];
                 idGanador = opcion.getId();
             }
-            indiceCaballos = this.setContenidoAOpcion(opcion,indiceCaballos,i);
             indiceCaballos++;
         }
         if (!dificil){
@@ -130,7 +125,7 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
     }
 
     private void setResultado(View v){
-        LinearLayout resultado = findViewById(R.id.layout_resultado);
+        final LinearLayout resultado = findViewById(R.id.layout_resultado);
         resultado.setVisibility(View.VISIBLE);
         TextView texto_resultado = findViewById(R.id.resultado);
         texto_resultado.setText("");
@@ -152,7 +147,17 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
 
         }
         mp.start();
-        nuevaRonda();
+        toggleOpcionesClick();
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Do something after 3s = 3000ms
+                toggleOpcionesClick();
+                resultado.setVisibility(View.GONE);
+                nuevaRonda();
+            }
+        }, 3000);
     }
 
 
@@ -193,15 +198,19 @@ public abstract class InteraccionMinijuego extends AppCompatActivity {
     }
 
     private void prepararFinMinijuego(){
-        LinearLayout opciones = (LinearLayout) findViewById(R.id.opciones);
-        int cantOpciones = opciones.getChildCount();
-        for (int i=0; i<cantOpciones; i++){
-            this.getOpcionesChild(opciones, i).setClickable(false);
-        }
+        this.toggleOpcionesClick();
         ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.ventanaFinMinijuego);
         layout.setVisibility(View.VISIBLE);
         layout.bringToFront();
         currentLayout.bringChildToFront(layout);
+    }
+
+    private void toggleOpcionesClick(){
+        LinearLayout opciones = (LinearLayout) findViewById(R.id.opciones);
+        int cantOpciones = opciones.getChildCount();
+        for (int i=0; i<cantOpciones; i++){
+            this.getOpcionesChild(opciones, i).setClickable(!this.getOpcionesChild(opciones, i).isClickable());
+        }
     }
 
     private void volverHome(){

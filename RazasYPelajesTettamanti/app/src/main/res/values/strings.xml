@@ -9,7 +9,7 @@
     <string name="nuevo_intento">Intentar de nuevo</string>
     <string name="info_ganador">Felicidades!, acertaste al menos 3 desafíos y pasaste al siguiente minijuego</string>
     <string name="info_perdedor">No has pasado al siguiente nivel, puedes intentar nuevamente o volver a la pantalla de inicio</string>
-    <string name="text_campeon">Felicidades! Has ganado todos los minijuegos y te has coronado campeon</string>
+    <string name="text_campeon">Felicidades! Has ganado todos los minijuegos y te has coronado</string>
 
     <string-array name="pelajes">
         <item>Rosillo</item>
